@@ -1,0 +1,117 @@
+<h2>Final Vault Structure — v2</h2>
+<p class="subtitle">Now with Claude Setup folder + auto-sync rule. Approve to build.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:16px">
+
+  <div class="mockup">
+    <div class="mockup-header">📥 00-Inbox</div>
+    <div class="mockup-body" style="font-family:monospace;font-size:0.8em;line-height:1.8;opacity:0.85">
+      Raw captures<br>
+      Session notes<br>
+      Quick ideas
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">💻 Dev/</div>
+    <div class="mockup-body" style="font-family:monospace;font-size:0.8em;line-height:1.8">
+      Projects/<br>
+      &nbsp;&nbsp;└── Discord Bot/<br>
+      Stack & Tools/<br>
+      Snippets/
+    </div>
+  </div>
+
+  <div class="mockup" style="border:2px solid rgba(99,102,241,0.5)">
+    <div class="mockup-header">🤖 Claude Setup/ <span style="font-size:0.75em;opacity:0.7">— NEW</span></div>
+    <div class="mockup-body" style="font-family:monospace;font-size:0.8em;line-height:1.8">
+      Skills/<br>
+      &nbsp;&nbsp;├── brainstorming.md<br>
+      &nbsp;&nbsp;├── frontend-design.md<br>
+      &nbsp;&nbsp;├── tdd.md<br>
+      &nbsp;&nbsp;└── [all skill files]/<br>
+      CARL Domains/<br>
+      &nbsp;&nbsp;├── global.carl<br>
+      &nbsp;&nbsp;├── notes.carl<br>
+      &nbsp;&nbsp;└── [all domains]/<br>
+      Settings/<br>
+      &nbsp;&nbsp;├── settings.json<br>
+      &nbsp;&nbsp;└── CLAUDE.md (global)
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">🎮 Gaming/</div>
+    <div class="mockup-body" style="font-family:monospace;font-size:0.8em;line-height:1.8">
+      Projects/<br>
+      Game Design Notes/<br>
+      Engines & Tools/
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">🎓 School/</div>
+    <div class="mockup-body" style="font-family:monospace;font-size:0.8em;line-height:1.8">
+      Courses/<br>
+      Assignments/<br>
+      Study Notes/
+    </div>
+  </div>
+
+  <div class="mockup" style="border:2px solid rgba(99,102,241,0.4)">
+    <div class="mockup-header">📚 Knowledge/ — The Dictionary</div>
+    <div class="mockup-body" style="font-family:monospace;font-size:0.8em;line-height:1.8">
+      Algorithms/<br>
+      Data Structures/<br>
+      System Design/<br>
+      Tech Concepts/<br>
+      Design Patterns/<br>
+      AI & Agents/<br>
+      Business & Finance/<br>
+      Inspiration/
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">💼 Business/</div>
+    <div class="mockup-body" style="font-family:monospace;font-size:0.8em;line-height:1.8">
+      Clothing Brand/<br>
+      Web Design Agency/<br>
+      &nbsp;&nbsp;└── Clients/<br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── EuroSide/
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">🎯 Career/</div>
+    <div class="mockup-body" style="font-family:monospace;font-size:0.8em;line-height:1.8">
+      Job Applications/<br>
+      Resume & Portfolio/<br>
+      Interview Prep/
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">📦 Archive/ &nbsp; 📋 Templates/</div>
+    <div class="mockup-body" style="font-family:monospace;font-size:0.8em;line-height:1.8">
+      Archive/<br><br>
+      Templates/<br>
+      &nbsp;&nbsp;├── Project.md<br>
+      &nbsp;&nbsp;├── Concept.md<br>
+      &nbsp;&nbsp;├── Course.md<br>
+      &nbsp;&nbsp;└── Idea.md
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top:20px;padding:14px 18px;border-radius:8px;background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.25);font-size:0.88em;line-height:1.8">
+  <strong>🤖 Auto-sync rule (goes in CLAUDE.md):</strong><br>
+  Whenever a skill is installed, created, or updated → copy the file to <code>Claude Setup/Skills/</code> → commit + push.<br>
+  Whenever a CARL domain is added or edited → copy to <code>Claude Setup/CARL Domains/</code> → commit + push.<br>
+  Whenever <code>settings.json</code> or global <code>CLAUDE.md</code> changes → copy to <code>Claude Setup/Settings/</code> → commit + push.
+</div>
+
+<div style="margin-top:12px;padding:14px 18px;border-radius:8px;background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.2);font-size:0.88em">
+  ✅ <strong>On a new machine:</strong> Clone the vault → copy Skills/ → CARL Domains/ → Settings/ to <code>~/.claude/</code> → done.
+</div>

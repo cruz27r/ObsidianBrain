@@ -1,0 +1,73 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 /Users/itocruz/.claude/hooks/carl-hook.py"
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "python3 /Users/itocruz/.ai-tools/statusline_ai.py",
+    "padding": 1
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-code-plugins": true,
+    "superpowers@superpowers-dev": true,
+    "playwright@claude-plugins-official": true,
+    "gws@workspace-cli": true,
+    "skill-codex@skill-codex": true,
+    "claude-mem@thedotmack": true,
+    "notion@makenotion": true,
+    "discord@claude-plugins-official": true
+  },
+  "extraKnownMarketplaces": {
+    "claude-code-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-code"
+      }
+    },
+    "superpowers-dev": {
+      "source": {
+        "source": "github",
+        "repo": "obra/superpowers"
+      }
+    },
+    "workspace-cli": {
+      "source": {
+        "source": "github",
+        "repo": "omriariav/workspace-cli"
+      }
+    },
+    "skill-codex": {
+      "source": {
+        "source": "github",
+        "repo": "skills-directory/skill-codex"
+      }
+    },
+    "thedotmack": {
+      "source": {
+        "source": "github",
+        "repo": "thedotmack/claude-mem"
+      }
+    },
+    "makenotion": {
+      "source": {
+        "source": "github",
+        "repo": "makenotion/claude-code-notion-plugin"
+      }
+    },
+    "claude-plugins-official": {
+      "source": {
+        "source": "github",
+        "repo": "anthropics/claude-plugins-official"
+      }
+    }
+  }
+}
