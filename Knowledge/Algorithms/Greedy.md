@@ -27,7 +27,7 @@ But greedy fails for coins [1, 3, 4] and amount 6:
 
 ## Greedy vs Dynamic Programming
 
-| | Greedy | Dynamic Programming |
+| | Greedy | [[Dynamic Programming]] |
 |---|---|---|
 | **Reconsiders choices?** | Never | Yes — explores all options |
 | **Speed** | Faster (often O(n log n)) | Slower (polynomial, sometimes exponential states) |

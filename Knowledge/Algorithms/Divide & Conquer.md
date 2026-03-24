@@ -13,7 +13,7 @@ Divide & conquer solves a problem by:
 2. **Conquer**: solve each subproblem recursively (base case when small enough)
 3. **Combine**: merge the subproblem solutions into a solution for the original problem
 
-The subproblems are **independent** — they don't share state or overlap. This is the key distinction from DP.
+The subproblems are **independent** — they don't share state or overlap. This is the key distinction from [[Dynamic Programming|DP]].
 
 ```
 Merge Sort (divide & conquer):

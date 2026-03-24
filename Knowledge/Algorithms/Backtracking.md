@@ -10,7 +10,7 @@ related: [DFS, Recursion, Trie]
 
 Backtracking is a systematic way to explore all possible solutions by building a candidate solution incrementally, and abandoning a path ("backtracking") as soon as you determine it cannot lead to a valid solution.
 
-Think of it as DFS on a decision tree: at each node you make a choice, recurse deeper, and then undo that choice when you come back up. The "undo" step is what makes it backtracking rather than plain recursion.
+Think of it as [[DFS (Depth-First Search)|DFS]] on a decision tree: at each node you make a choice, recurse deeper, and then undo that choice when you come back up. The "undo" step is what makes it backtracking rather than plain recursion.
 
 ```
 Decision tree for subsets of [1,2,3]:
@@ -250,7 +250,7 @@ Pruning cuts branches from the decision tree early, before exploring dead ends.
 **Common pruning techniques:**
 - **Remaining < 0**: if you've exceeded the target in combination sum, return immediately
 - **Start index**: always pass a start index to avoid generating duplicates in subset/combination problems
-- **Sorting first**: sort the input so you can break early when `candidates[i] > remaining`
+- **Sorting first**: [[Sorting Algorithms|sort]] the input so you can break early when `candidates[i] > remaining`
 - **Deduplication**: when the input has duplicates, skip `candidates[i]` if `i > start && candidates[i] === candidates[i-1]`
 
 ```typescript

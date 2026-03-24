@@ -10,7 +10,7 @@ related: [Arrays & Strings, Dynamic Programming]
 
 Bit manipulation lets you perform operations directly on binary representations of numbers. The payoffs in interviews:
 
-- **O(1) space** tricks that replace hash sets or extra arrays
+- **O(1) space** tricks that replace hash sets or extra [[Arrays & Strings|arrays]]
 - **XOR-based** solutions for "find the unique element" class of problems
 - Fast modular arithmetic (powers of 2, even/odd checks)
 - Masking and flag patterns common in systems/embedded questions

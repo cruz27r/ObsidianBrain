@@ -91,7 +91,7 @@ Ask these questions:
 
 **Keywords**: "minimum cost", "maximum profit", "how many ways", "longest subsequence", "fewest steps", "can you reach"
 
-**Not DP**: if subproblems are independent (divide & conquer), or if greedy always works.
+**Not DP**: if subproblems are independent ([[Divide & Conquer|divide & conquer]]), or if [[Greedy|greedy]] always works.
 
 ---
 

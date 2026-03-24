@@ -116,7 +116,7 @@ Uses Fast & Slow pointers — see [[Fast & Slow Pointers]] for full explanation.
 ## When to prefer linked list over array
 - Frequent insert/delete at the front (O(1) vs O(n) for arrays)
 - Size is unknown and constantly changing
-- Implementing stacks/queues (though arrays work too)
+- Implementing [[Stack|stacks]]/[[Queue & Deque|queues]] (though arrays work too)
 
 ## Multi-Language Reference — Reverse a Linked List
 

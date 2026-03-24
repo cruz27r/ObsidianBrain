@@ -31,7 +31,7 @@ graph TD
 ## The ones that matter in practice
 
 ### Merge Sort — O(n log n) / O(n) space
-Divide array in half recursively, sort each half, merge back. Stable sort. Good for large datasets and linked lists.
+[[Divide & Conquer|Divide]] array in half recursively, sort each half, merge back. Stable sort. Good for large datasets and [[Linked List|linked lists]].
 
 ```typescript
 function mergeSort(arr: number[]): number[] {

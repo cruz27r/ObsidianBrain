@@ -13,8 +13,8 @@ It tracks a collection of disjoint (non-overlapping) sets and supports two opera
 - **find(x)** — which set does x belong to? (returns representative/root)
 - **union(x, y)** — merge the sets containing x and y
 
-## Why it beats BFS/DFS for connectivity
-- BFS/DFS: O(V+E) per query — must re-traverse the graph
+## Why it beats [[BFS (Breadth-First Search)|BFS]]/[[DFS (Depth-First Search)|DFS]] for connectivity
+- BFS/DFS: O(V+E) per query — must re-traverse the [[Graph|graph]]
 - Union-Find: nearly O(1) per operation with optimizations — ideal when you're **repeatedly checking and updating connectivity**
 
 ## Optimizations

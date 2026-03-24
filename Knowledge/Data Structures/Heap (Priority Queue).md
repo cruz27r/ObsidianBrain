@@ -118,7 +118,7 @@ function topKLargest(nums: number[], k: number): number[] {
 | Dijkstra shortest path | Min-heap by distance |
 
 ## Heap sort
-Build max-heap in O(n), then extract max n times = O(n log n). In-place, no extra space, but not stable and poor cache performance vs merge sort.
+Build max-heap in O(n), then extract max n times = O(n log n). In-place, no extra space, but not stable and poor cache performance vs [[Sorting Algorithms|merge sort]].
 
 ## Multi-Language Reference — Min-Heap / Priority Queue
 

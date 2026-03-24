@@ -7,7 +7,7 @@ related: [BFS (Breadth-First Search), DFS (Depth-First Search), Union-Find (Disj
 # Graph
 
 ## What it is
-A collection of **nodes (vertices)** connected by **edges**. The most general data structure — trees and linked lists are special cases of graphs.
+A collection of **nodes (vertices)** connected by **edges**. The most general data structure — trees and [[Linked List|linked lists]] are special cases of graphs.
 
 ## Key properties
 | Property | Variants |

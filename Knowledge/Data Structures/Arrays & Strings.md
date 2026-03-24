@@ -17,7 +17,7 @@ Strings in JavaScript/TypeScript are **immutable** — every "modification" crea
 |---|---|---|
 | Access by index | O(1) | Direct memory calculation |
 | Search (unsorted) | O(n) | Linear scan |
-| Search (sorted) | O(log n) | Binary search |
+| Search (sorted) | O(log n) | [[Binary Search]] |
 | Insert/delete at end | O(1) amortized | Arrays grow by doubling |
 | Insert/delete at middle | O(n) | Must shift elements |
 | String concat in loop | O(n²) | Each `+` copies whole string — use array join |

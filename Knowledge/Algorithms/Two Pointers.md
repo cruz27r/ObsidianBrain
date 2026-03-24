@@ -195,7 +195,7 @@ function maxArea(height: number[]): number {
 // maxArea([1,8,6,2,5,4,8,3,7]) => 49
 ```
 
-**Greedy insight**: the area is limited by the shorter line. Moving the shorter line inward is the only move that could possibly find a larger area. Moving the taller line can never help (width decreases, height is still capped by the other side).
+**[[Greedy]] insight**: the area is limited by the shorter line. Moving the shorter line inward is the only move that could possibly find a larger area. Moving the taller line can never help (width decreases, height is still capped by the other side).
 
 ---
 

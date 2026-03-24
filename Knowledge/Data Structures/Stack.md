@@ -39,7 +39,7 @@ graph TB
 ## When to reach for a stack
 - **Balanced parentheses** / bracket matching
 - **Undo/redo** — push actions, pop to undo
-- **DFS iteratively** — explicit stack replaces call stack
+- **[[DFS (Depth-First Search)|DFS]] iteratively** — explicit stack replaces call stack
 - **Monotonic stack** — next greater/smaller element problems
 - **Function call tracing** — how the JS call stack itself works
 - **Expression evaluation** — postfix notation

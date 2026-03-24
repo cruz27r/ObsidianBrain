@@ -80,7 +80,7 @@ flowchart TD
     end
 ```
 
-*Skewed = effectively a linked list. Self-balancing trees (AVL, Red-Black) prevent this.*
+*Skewed = effectively a [[Linked List|linked list]]. Self-balancing trees (AVL, Red-Black) prevent this.*
 
 ## The Recursive Decision Pattern
 
@@ -116,7 +116,7 @@ class TreeNode {
 
 ## The 4 traversals (brief)
 Full implementations in [[Tree Traversals]].
-- **Inorder** (left → root → right): for BST, gives sorted order
+- **Inorder** (left → root → right): for [[BST (Binary Search Tree)|BST]], gives sorted order
 - **Preorder** (root → left → right): serialization, copying
 - **Postorder** (left → right → root): deletion, subtree calculations
 - **Level-order** (BFS): process by depth, shortest path
@@ -224,7 +224,7 @@ int maxDepth(TreeNode* root) {
 - [NeetCode · Trees playlist](https://neetcode.io/roadmap)
 
 ## Related
-- [[BST]] — binary tree with ordering property
+- [[BST (Binary Search Tree)|BST]] — binary tree with ordering property
 - [[Tree Traversals]] — inorder, preorder, postorder, level-order
 - [[DFS (Depth-First Search)]] — all non-level-order traversals are DFS
 - [[BFS (Breadth-First Search)]] — level-order traversal

@@ -1,7 +1,7 @@
 ---
 tags: [concept, data-structure, tech]
 created: 2026-03-21
-related: [Big O Notation, Arrays]
+related: [Big O Notation, Arrays & Strings]
 ---
 
 # Hash Tables
@@ -21,7 +21,7 @@ Worst case happens when many keys hash to the same slot (collision) — rare wit
 ## How it works
 1. Take the key (e.g. `"name"`)
 2. Run through a hash function → get an index (e.g. `42`)
-3. Store the value at that index in an underlying array
+3. Store the value at that index in an underlying [[Arrays & Strings|array]]
 4. Lookup: hash the key again → go directly to that index
 
 **Collision handling:** two keys hash to same index → chaining (linked list at slot) or open addressing.
@@ -152,4 +152,4 @@ s.insert(1); s.count(1); s.erase(1);
 
 ## Related
 - [[Big O Notation]] — why O(1) average is powerful
-- [[Arrays]] — hash tables use arrays internally
+- [[Arrays & Strings]] — hash tables use arrays internally

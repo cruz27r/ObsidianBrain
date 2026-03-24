@@ -19,7 +19,7 @@ This isn't just about immediate children — it applies to **all descendants**.
 | Delete | O(log n) | O(n) |
 | Min / Max | O(log n) | O(n) |
 
-**Degenerate case**: inserting already-sorted data into a plain BST creates a linked list. Self-balancing BSTs (AVL, Red-Black) prevent this — JS `Map`/`Set` use these internally.
+**Degenerate case**: inserting already-sorted data into a plain BST creates a [[Linked List|linked list]]. Self-balancing BSTs (AVL, Red-Black) prevent this — JS `Map`/`Set` use these internally.
 
 ## The killer insight: inorder = sorted
 Inorder traversal of any BST yields elements in sorted ascending order. This is used constantly in interview problems.
@@ -89,7 +89,7 @@ function isValidBST(root: TreeNode | null, min = -Infinity, max = Infinity): boo
 }
 ```
 
-## BST vs Hash Map
+## BST vs [[Hash Tables|Hash Map]]
 | | BST | Hash Map |
 |---|---|---|
 | Lookup | O(log n) | O(1) avg |

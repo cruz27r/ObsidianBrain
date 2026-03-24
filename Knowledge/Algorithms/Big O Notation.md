@@ -13,10 +13,10 @@ A way to describe how the performance of an algorithm scales as input size grows
 
 | Notation | Name | Example |
 |---|---|---|
-| O(1) | Constant | Array index lookup, hash map get |
-| O(log n) | Logarithmic | Binary search |
+| O(1) | Constant | [[Arrays & Strings|Array]] index lookup, [[Hash Tables|hash map]] get |
+| O(log n) | Logarithmic | [[Binary Search]] |
 | O(n) | Linear | Loop through array once |
-| O(n log n) | Linearithmic | Merge sort, heap sort |
+| O(n log n) | Linearithmic | Merge sort, [[Sorting Algorithms|heap sort]] |
 | O(n²) | Quadratic | Nested loops (bubble sort) |
 | O(2ⁿ) | Exponential | Recursive Fibonacci (naive) |
 | O(n!) | Factorial | Permutations of n items |

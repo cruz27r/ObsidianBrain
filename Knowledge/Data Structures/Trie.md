@@ -44,7 +44,7 @@ graph TD
 
 *All words starting with "ap" share the same `a → p` path — that's the space/lookup efficiency.*
 
-## When to use over hash map
+## When to use over [[Hash Tables|hash map]]
 | Scenario | Trie | Hash Map |
 |---|---|---|
 | Exact word lookup | Both O(m) | Both fine |
@@ -133,7 +133,7 @@ searchWithWildcard(word: string): boolean {
 ```
 
 ## Classic interview problems
-- **Word Search II**: find all dictionary words in a 2D grid — Trie + DFS + backtracking
+- **Word Search II**: find all dictionary words in a 2D grid — Trie + [[DFS (Depth-First Search)|DFS]] + [[Backtracking|backtracking]]
 - **Replace Words**: replace words with their shortest root — Trie prefix search
 - **Design Search Autocomplete**: return top suggestions for a prefix
 

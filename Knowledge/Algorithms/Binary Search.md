@@ -23,8 +23,8 @@ With 1 million items: linear search = up to 1,000,000 checks. Binary search = at
 - Searching large datasets
 
 ## When NOT to use it
-- Unsorted data (sort first, or use a hash map instead)
-- Linked lists — no O(1) index access, kills the advantage
+- Unsorted data (sort first, or use a [[Hash Tables|hash map]] instead)
+- [[Linked List|Linked lists]] — no O(1) index access, kills the advantage
 
 ## How it works
 1. Start with low = 0, high = last index

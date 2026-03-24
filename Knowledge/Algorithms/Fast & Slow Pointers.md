@@ -34,7 +34,7 @@ fast: 1 → 3 → 5 → 7 → 4 → 6 → 8 ...
 
 ## When to Use
 
-- Detect a cycle in a linked list or numeric sequence
+- Detect a cycle in a [[Linked List|linked list]] or numeric sequence
 - Find the start of a cycle
 - Find the middle of a linked list (in one pass)
 - Check if a linked list is a palindrome (find middle, reverse second half)

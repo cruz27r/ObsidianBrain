@@ -10,10 +10,10 @@ related: [Binary Tree, BST (Binary Search Tree), DFS (Depth-First Search), BFS (
 
 | Traversal | Order | Key use case |
 |---|---|---|
-| **Inorder** | left → root → right | BST sorted output, kth smallest |
+| **Inorder** | left → root → right | [[BST (Binary Search Tree)|BST]] sorted output, kth smallest |
 | **Preorder** | root → left → right | Serialize/copy tree, path problems |
 | **Postorder** | left → right → root | Delete tree, subtree aggregation |
-| **Level-order** | BFS by depth | Min depth, right side view, zigzag |
+| **Level-order** | [[BFS (Breadth-First Search)|BFS]] by depth | Min depth, right side view, zigzag |
 
 ## Recursive implementations (simple, clean)
 
@@ -48,7 +48,7 @@ function postorder(root: TreeNode | null, result: number[] = []): number[] {
 
 ## Iterative implementations (interviewers love asking for these)
 
-### Iterative inorder — using a stack
+### Iterative inorder — using a [[Stack|stack]]
 ```typescript
 function inorderIterative(root: TreeNode | null): number[] {
   const result: number[] = [];

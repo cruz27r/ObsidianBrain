@@ -68,8 +68,8 @@ graph LR
 *Enqueue joins the back (blue); dequeue removes from the front (orange) — first in, first out.*
 
 ## When to use
-- **Queue**: BFS, level-order traversal, task scheduling, any "process in order" scenario
-- **Deque**: sliding window maximum, palindrome check, implement both stack and queue
+- **Queue**: [[BFS (Breadth-First Search)|BFS]], level-order traversal, task scheduling, any "process in order" scenario
+- **Deque**: [[Sliding Window|sliding window]] maximum, palindrome check, implement both stack and queue
 
 ## Sliding window maximum — monotonic deque
 Classic hard problem: find max in every window of size k in O(n) using a deque.

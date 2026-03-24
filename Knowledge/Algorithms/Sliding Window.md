@@ -248,7 +248,7 @@ The only thing that changes between problems is what `windowState` is and what "
 
 - **Shrinking too aggressively**: in longest-window problems, only shrink until valid, not further
 - **Updating answer at the wrong time**: for minimum problems, update inside the shrink loop; for maximum, update after shrinking
-- **Map vs Set**: use a map when you need counts; use a set when you just need presence
+- **Map vs Set**: use a [[Hash Tables|map]] when you need counts; use a set when you just need presence
 - **Fixed window off-by-one**: the element leaving the window is at index `right - k`, not `right - k + 1`
 
 ---
