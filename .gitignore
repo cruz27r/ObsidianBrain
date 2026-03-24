@@ -1,0 +1,13 @@
+# Obsidian plugin binaries (auto-downloaded, don't track)
+.obsidian/plugins/*/main.js
+.obsidian/plugins/*/styles.css
+
+# Workspace state (local only)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Cache
+.obsidian/cache
+
+# macOS
+.DS_Store
