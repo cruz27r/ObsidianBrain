@@ -20,3 +20,8 @@
 
 # Copilot local cache
 copilot/
+
+
+
+# Ignore Smart Environment folder
+.smart-env

@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cp \"C:/Users/cruzr/.claude/skills/frontend-design.md\" \"E:/ObsidianBrain/Claude Setup/Skills/frontend-design.md\")",
+      "Bash(cp \"C:/Users/cruzr/.claude/skills/obsidian-capture.md\" \"E:/ObsidianBrain/Claude Setup/Skills/obsidian-capture.md\")",
+      "Bash(cp \"C:/Users/cruzr/.claude/skills/client-update.md\" \"E:/ObsidianBrain/Claude Setup/Skills/client-update.md\")"
+    ]
+  }
+}

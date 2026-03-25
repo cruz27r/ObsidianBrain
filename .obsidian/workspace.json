@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "71cef78661e84d43",
+        "id": "44bb432693181ad7",
         "type": "tabs",
         "children": [
           {
-            "id": "9ac2406b12fad1db",
+            "id": "af9b284b4b4bfb1e",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -165,8 +165,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
+              "icon": "lucide-ghost",
+              "title": "git-view"
             }
           },
           {
@@ -175,8 +175,8 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "spreadsheet",
-              "title": "Advanced Tables"
+              "icon": "lucide-ghost",
+              "title": "advanced-tables-toolbar"
             }
           },
           {
@@ -185,8 +185,8 @@
             "state": {
               "type": "calendar",
               "state": {},
-              "icon": "calendar-with-checkmark",
-              "title": "Calendar"
+              "icon": "lucide-ghost",
+              "title": "calendar"
             }
           },
           {
@@ -218,9 +218,19 @@
               "icon": "lucide-info",
               "title": "File properties"
             }
+          },
+          {
+            "id": "830310346bd50eef",
+            "type": "leaf",
+            "state": {
+              "type": "planner-timeline",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Timeline"
+            }
           }
         ],
-        "currentTab": 8
+        "currentTab": 9
       }
     ],
     "direction": "horizontal",
@@ -228,12 +238,6 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "templater-obsidian:Templater": false,
-      "obsidian-kanban:Create new board": false,
-      "table-editor-obsidian:Advanced Tables Toolbar": false,
-      "obsidian-git:Open Git source control": false,
-      "periodic-notes:Open today's daily note": false,
-      "obsidian-excalidraw-plugin:New drawing": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -243,19 +247,37 @@
       "bases:Create new base": false,
       "audio-recorder:Start/stop recording": false,
       "markdown-importer:Open format converter": false,
-      "copilot:Open Copilot Chat": false,
-      "obsidian-day-planner:Open Timeline": false,
-      "obsidian-day-planner:Open Multi-Day View": false,
-      "homepage:Open homepage": false,
-      "obsidian-leaflet-plugin:Open Leaflet Map": false,
+      "templater-obsidian:Templater": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "obsidian-git:Open Git source control": false,
+      "obsidian-kanban:Create new board": false,
+      "remotely-save:Remotely Save": false,
       "omnisearch:Omnisearch": false,
+      "homepage:Open homepage": false,
       "smart-connections:Smart Connections: Open connections view": false,
       "smart-connections:Smart Lookup: Open lookup view": false,
-      "smart-connections:Smart Connections: Open random connection": false
+      "smart-connections:Smart Connections: Open random connection": false,
+      "obsidian-day-planner:Open Timeline": false,
+      "obsidian-day-planner:Open Multi-Day View": false,
+      "obsidian-leaflet-plugin:Open Leaflet Map": false
     }
   },
-  "active": "9ac2406b12fad1db",
+  "active": "af9b284b4b4bfb1e",
   "lastOpenFiles": [
+    "Templates/Source Intake.md",
+    "Templates/Source Intake.md.tmp.39312.1774401521749",
+    "Templates/Weekly Review.md",
+    "Templates/Weekly Review.md.tmp.39312.1774401518727",
+    "Templates/Daily Note.md",
+    "Templates/Daily Note.md.tmp.39312.1774401516461",
+    "Dev/Projects/Discord Bot/Dev Log.md",
+    "Dev/Projects/Discord Bot/Dev Log.md.tmp.39312.1774401513515",
+    "Career/Interview Prep Tracker.md",
+    "Career/Interview Prep Tracker.md.tmp.39312.1774401508533",
+    "Career",
+    "Home.md",
+    "Home.md.tmp.39312.1774401502719",
     "00-Inbox/2026-03-21 Session Summary.md",
     "Knowledge/Algorithms/DFS (Depth-First Search).md",
     "Knowledge/Algorithms/Algorithm Decision Tree.md",
@@ -276,21 +298,8 @@
     "copilot/copilot-custom-prompts/Simplify.md",
     "copilot/copilot-custom-prompts/Summarize.md",
     "copilot/copilot-custom-prompts/Translate to Chinese.md",
-    "copilot/copilot-custom-prompts/Fix grammar and spelling.md",
     "copilot/copilot-custom-prompts",
     "copilot",
-    "Excalidraw/Drawing 2026-03-23 23.43.14.excalidraw.md",
-    "Excalidraw",
-    "Knowledge/Algorithms/Sliding Window.md",
-    "Knowledge/Algorithms/Dynamic Programming.md",
-    "Knowledge/Algorithms/Bit Manipulation.md",
-    "Knowledge/Algorithms/Binary Search.md",
-    "03-Resources/Data Structures",
-    "03-Resources/Design Patterns",
-    "03-Resources/System Design",
-    "03-Resources/Algorithms",
-    "Templates",
-    "04-Archive",
-    "03-Resources/Tech Concepts"
+    "Excalidraw"
   ]
 }
