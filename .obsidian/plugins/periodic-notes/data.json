@@ -5,13 +5,13 @@
   "daily": {
     "format": "YYYY-MM-DD",
     "template": "Templates/Daily Note.md",
-    "folder": "00-Inbox",
+    "folder": "00-Inbox/Daily",
     "enabled": true
   },
   "weekly": {
     "format": "YYYY-[W]WW",
     "template": "Templates/Weekly Review.md",
-    "folder": "00-Inbox",
+    "folder": "00-Inbox/Weekly",
     "enabled": true
   },
   "monthly": {

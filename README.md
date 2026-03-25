@@ -1,2 +1,0 @@
-# ObsidianBrain
-Obsidian Repo

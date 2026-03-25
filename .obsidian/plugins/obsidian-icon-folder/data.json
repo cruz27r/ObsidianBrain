@@ -4,9 +4,20 @@
     "iconPacksPath": ".obsidian/icons",
     "fontSize": 16,
     "emojiStyle": "native",
-    "iconColor": null,
-    "recentlyUsedIcons": [],
-    "recentlyUsedIconsSize": 5,
+    "iconColor": "#5f9172",
+    "recentlyUsedIcons": [
+      "➕",
+      "✖",
+      "📥",
+      "🏚",
+      "🤲",
+      "📖",
+      "✏",
+      "🖥",
+      "🤖",
+      "💵"
+    ],
+    "recentlyUsedIconsSize": 10,
     "rules": [],
     "extraMargin": {
       "top": 0,
@@ -14,9 +25,9 @@
       "bottom": 0,
       "left": 0
     },
-    "iconInTabsEnabled": false,
-    "iconInTitleEnabled": false,
-    "iconInTitlePosition": "above",
+    "iconInTabsEnabled": true,
+    "iconInTitleEnabled": true,
+    "iconInTitlePosition": "inline",
     "iconInFrontmatterEnabled": false,
     "iconInFrontmatterFieldName": "icon",
     "iconColorInFrontmatterFieldName": "iconColor",
@@ -27,5 +38,16 @@
     "lucideIconPackType": "native",
     "debugMode": false,
     "useInternalPlugins": false
-  }
+  },
+  "00-Inbox": "📥",
+  "00-Inbox/Daily": "✖",
+  "00-Inbox/Weekly": "➕",
+  "Career": "LiNewspaper",
+  "Business": "💵",
+  "Claude Setup": "🤖",
+  "Dev": "🖥",
+  "Excalidraw": "✏",
+  "Knowledge": "📖",
+  "Templates": "🤲",
+  "Home.md": "🏚"
 }

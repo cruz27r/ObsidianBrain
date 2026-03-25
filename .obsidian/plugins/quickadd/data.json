@@ -37,8 +37,8 @@
       "command": false,
       "templatePath": "Templates/Idea.md",
       "fileNameFormat": {
-        "enabled": true,
-        "format": "{{DATE:YYYY-MM-DD}}"
+        "enabled": false,
+        "format": ""
       },
       "folder": {
         "enabled": true,
@@ -97,17 +97,17 @@
       "command": false,
       "templatePath": "Templates/Concept.md",
       "fileNameFormat": {
-        "enabled": true,
-        "format": "{{DATE:YYYY-MM-DD}}"
+        "enabled": false,
+        "format": ""
       },
       "folder": {
         "enabled": true,
         "folders": [
-          "00-Inbox"
+          "Knowledge"
         ],
         "chooseWhenCreatingNote": false,
         "createInSameFolderAsActiveFile": false,
-        "chooseFromSubfolders": false
+        "chooseFromSubfolders": true
       },
       "appendLink": false,
       "openFile": false,
