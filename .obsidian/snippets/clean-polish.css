@@ -1,0 +1,84 @@
+/* ── Clean Polish Snippet ── */
+/* Subtle upgrades on top of Minimal theme */
+
+/* Heading accent lines — visual hierarchy */
+.markdown-rendered h1,
+.markdown-preview-view h1 {
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 4px;
+  margin-bottom: 12px;
+}
+
+.markdown-rendered h2,
+.markdown-preview-view h2 {
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 3px;
+}
+
+/* Slightly rounded note background + padding */
+.markdown-preview-view {
+  padding: 24px 32px !important;
+}
+
+/* Tags look like pills */
+.tag {
+  background-color: var(--color-accent-2) !important;
+  border-radius: 12px !important;
+  padding: 2px 10px !important;
+  font-size: 0.78em !important;
+  border: none !important;
+}
+
+/* Frontmatter block — subtle, not distracting */
+.metadata-container {
+  opacity: 0.6;
+  font-size: 0.85em;
+}
+.metadata-container:hover {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+/* Dataview tables — cleaner */
+.dataview.table-view-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+.dataview.table-view-table th {
+  background-color: var(--background-secondary);
+  padding: 6px 12px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+.dataview.table-view-table td {
+  padding: 6px 12px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+.dataview.table-view-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Checkboxes — slightly larger, more satisfying to click */
+input[type="checkbox"] {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* Wikilinks — subtle color, no underline clutter */
+.internal-link {
+  text-decoration: none !important;
+  border-bottom: 1px dotted var(--color-accent);
+}
+.internal-link:hover {
+  border-bottom: 1px solid var(--color-accent);
+}
+
+/* Callout blocks — rounded and padded */
+.callout {
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+}
