@@ -1,0 +1,31 @@
+## Skill Routing (Simple)
+- Frontend/UI work: use `frontend-design`.
+- Browser QA or flow automation: use `playwright`.
+- Files like PDF/DOCX/PPTX/XLSX: use `document-skills`.
+- MCP/server integration work: use `mcp-builder`.
+- Google Workspace ops: use `gws` (mail/calendar/drive/docs/sheets).
+- Browser agent tasks: use `browser-use` MCP only when explicitly needed.
+- Market/web research APIs: use `valyu-mcp` only when key is configured.
+- Design system generation: use `theme-factory`.
+- Brand consistency checks/content: use `brand-guidelines`.
+- Creative visual generation: use `algorithmic-art`.
+- Social/comms GIF generation: use `slack-gif-creator`.
+- External second-opinion review: use `codex-review`.
+- Codex CLI delegation: use `codex` (from `skill-codex`) for deep review/audit or parallel analysis.
+- Image processing (logo bg removal, format conversion, resizing): Python/Pillow via a throwaway venv (`/tmp/imgenv`).
+- Live library docs in context: use `context7` MCP — prevents stale API hallucinations.
+- Architecture diagrams / whiteboarding: use `excalidraw` MCP.
+- Cross-session memory: `claude-mem` plugin — auto-injects relevant prior context.
+- GitHub operations (repos, PRs, issues, Actions): use `github` MCP.
+- AI-native web/code/docs search: use `exa` MCP.
+- Full-stack backend (DB, auth, storage, edge functions): use `supabase` MCP.
+- Payments, billing, subscriptions: use `stripe` MCP.
+- PDF read/extract: use `pdf-reader` MCP.
+- Word document creation/editing: use `office-word` MCP.
+- Google Docs/Sheets/Slides/Forms (multi-account): use `google-workspace` MCP (taylorwilsdon).
+- Notion read/write: use `notion` MCP + Notion Claude Code plugin.
+- Obsidian vault read/write/search: use `obsidian` MCP (requires Local REST API plugin in Obsidian).
+- Shopify Admin API: use `shopify` MCP + `shopify-dev` MCP for docs/schema.
+- Print-on-demand products: use `printify` MCP.
+- Mobile app testing (iOS/Android): use `appium` MCP.
+- Zoom meeting transcripts → notes: use `zoom_transcript_mcp` (requires manual clone + build).
