@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Queue & Deque, Linked List, DFS]
 ---
 
+> [!pattern] LIFO · Monotonic
+
 # Stack
 
 ## What it is
@@ -11,13 +13,13 @@ A **LIFO** (Last In, First Out) data structure. The last item pushed is the firs
 
 In JavaScript, just use an array — `push()` and `pop()` are both O(1).
 
-## Complexity
-| Operation | Complexity |
-|---|---|
-| Push | O(1) |
-| Pop | O(1) |
-| Peek (top element) | O(1) |
-| Search | O(n) |
+> [!complexity] Complexity
+> | Operation | Complexity |
+> |---|---|
+> | Push | O(1) |
+> | Pop | O(1) |
+> | Peek (top element) | O(1) |
+> | Search | O(n) |
 
 ## Diagram — LIFO (Last In, First Out)
 
@@ -110,77 +112,82 @@ class MinStack {
 
 ## Multi-Language Reference — Valid Parentheses
 
-```javascript
-// JavaScript
-function isValid(s) {
-  const stack = [], map = { ')': '(', '}': '{', ']': '[' };
-  for (const c of s) {
-    if ('({['.includes(c)) stack.push(c);
-    else if (stack.pop() !== map[c]) return false;
-  }
-  return stack.length === 0;
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function isValid(s) {
+>   const stack = [], map = { ')': '(', '}': '{', ']': '[' };
+>   for (const c of s) {
+>     if ('({['.includes(c)) stack.push(c);
+>     else if (stack.pop() !== map[c]) return false;
+>   }
+>   return stack.length === 0;
+> }
+> ```
 
-```java
-// Java
-public static boolean isValid(String s) {
-    Deque<Character> stack = new ArrayDeque<>();
-    for (char c : s.toCharArray()) {
-        if (c == '(' || c == '{' || c == '[') stack.push(c);
-        else {
-            if (stack.isEmpty()) return false;
-            char top = stack.pop();
-            if ((c == ')' && top != '(') || (c == '}' && top != '{') || (c == ']' && top != '['))
-                return false;
-        }
-    }
-    return stack.isEmpty();
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static boolean isValid(String s) {
+>     Deque<Character> stack = new ArrayDeque<>();
+>     for (char c : s.toCharArray()) {
+>         if (c == '(' || c == '{' || c == '[') stack.push(c);
+>         else {
+>             if (stack.isEmpty()) return false;
+>             char top = stack.pop();
+>             if ((c == ')' && top != '(') || (c == '}' && top != '{') || (c == ']' && top != '['))
+>                 return false;
+>         }
+>     }
+>     return stack.isEmpty();
+> }
+> ```
 
-```python
-# Python
-def is_valid(s):
-    stack, mapping = [], {')': '(', '}': '{', ']': '['}
-    for c in s:
-        if c in '({[': stack.append(c)
-        elif not stack or stack.pop() != mapping[c]: return False
-    return not stack
-```
+> [!example]- Python
+> ```python
+> # Python
+> def is_valid(s):
+>     stack, mapping = [], {')': '(', '}': '{', ']': '['}
+>     for c in s:
+>         if c in '({[': stack.append(c)
+>         elif not stack or stack.pop() != mapping[c]: return False
+>     return not stack
+> ```
 
-```c
-// C
-int isValid(char* s) {
-    char stack[10001]; int top = -1;
-    for (int i = 0; s[i]; i++) {
-        char c = s[i];
-        if (c == '(' || c == '{' || c == '[') stack[++top] = c;
-        else {
-            if (top < 0) return 0;
-            char t = stack[top--];
-            if ((c == ')' && t != '(') || (c == '}' && t != '{') || (c == ']' && t != '[')) return 0;
-        }
-    }
-    return top == -1;
-}
-```
+> [!example]- C
+> ```c
+> // C
+> int isValid(char* s) {
+>     char stack[10001]; int top = -1;
+>     for (int i = 0; s[i]; i++) {
+>         char c = s[i];
+>         if (c == '(' || c == '{' || c == '[') stack[++top] = c;
+>         else {
+>             if (top < 0) return 0;
+>             char t = stack[top--];
+>             if ((c == ')' && t != '(') || (c == '}' && t != '{') || (c == ']' && t != '[')) return 0;
+>         }
+>     }
+>     return top == -1;
+> }
+> ```
 
-```cpp
-// C++
-bool isValid(string s) {
-    stack<char> st;
-    for (char c : s) {
-        if (c == '(' || c == '{' || c == '[') st.push(c);
-        else {
-            if (st.empty()) return false;
-            char t = st.top(); st.pop();
-            if ((c == ')' && t != '(') || (c == '}' && t != '{') || (c == ']' && t != '[')) return false;
-        }
-    }
-    return st.empty();
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> bool isValid(string s) {
+>     stack<char> st;
+>     for (char c : s) {
+>         if (c == '(' || c == '{' || c == '[') st.push(c);
+>         else {
+>             if (st.empty()) return false;
+>             char t = st.top(); st.pop();
+>             if ((c == ')' && t != '(') || (c == '}' && t != '{') || (c == ']' && t != '[')) return false;
+>         }
+>     }
+>     return st.empty();
+> }
+> ```
 
 ## Practice & Resources
 

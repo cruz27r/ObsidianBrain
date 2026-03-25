@@ -3,7 +3,14 @@
     "allow": [
       "Bash(cp \"C:/Users/cruzr/.claude/skills/frontend-design.md\" \"E:/ObsidianBrain/Claude Setup/Skills/frontend-design.md\")",
       "Bash(cp \"C:/Users/cruzr/.claude/skills/obsidian-capture.md\" \"E:/ObsidianBrain/Claude Setup/Skills/obsidian-capture.md\")",
-      "Bash(cp \"C:/Users/cruzr/.claude/skills/client-update.md\" \"E:/ObsidianBrain/Claude Setup/Skills/client-update.md\")"
+      "Bash(cp \"C:/Users/cruzr/.claude/skills/client-update.md\" \"E:/ObsidianBrain/Claude Setup/Skills/client-update.md\")",
+      "Bash(find E:/ObsidianBrain/Dev -type f -name *.md)",
+      "Bash(find 'E:/ObsidianBrain/Knowledge/Data Structures' -name *.md)",
+      "Bash(cp \"C:/Users/cruzr/.claude/skills/knowledge-note-design.md\" \"E:/ObsidianBrain/Claude Setup/Skills/\")",
+      "Bash(cp \"C:/Users/cruzr/.claude/skills/dev-note-design.md\" \"E:/ObsidianBrain/Claude Setup/Skills/\")",
+      "Bash(cp \"C:/Users/cruzr/.claude/skills/business-note-design.md\" \"E:/ObsidianBrain/Claude Setup/Skills/\")",
+      "Bash(cp \"C:/Users/cruzr/.claude/skills/career-note-design.md\" \"E:/ObsidianBrain/Claude Setup/Skills/\")",
+      "Bash(cp \"C:/Users/cruzr/.claude/instructions/skill-routing.md\" \"E:/ObsidianBrain/Claude Setup/Settings/\")"
     ]
   }
 }

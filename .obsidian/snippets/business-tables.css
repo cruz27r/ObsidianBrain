@@ -1,0 +1,17 @@
+/* ── business-tables.css ── */
+/* DISABLED BY DEFAULT — toggle ON only when editing EuroSide notes */
+/* Overrides table headers with brand orange. Will bleed vault-wide if left on. */
+
+.markdown-preview-view table {
+  background-color: rgba(24, 21, 16, 0.4) !important;
+}
+.markdown-preview-view table th {
+  background-color: rgba(232, 81, 26, 0.1) !important;
+  color: #E8511A !important;
+  font-size: 0.8em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.06em !important;
+}
+.markdown-preview-view h2 {
+  border-bottom-color: #E8511A !important;
+}

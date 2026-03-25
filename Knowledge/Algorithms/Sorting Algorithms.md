@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Big O Notation, Binary Search]
 ---
 
+> [!pattern] Comparison · Divide & Conquer
+
 # Sorting Algorithms
 
 ## What it is
@@ -82,97 +84,102 @@ V8 uses TimSort (hybrid merge + insertion). Always use a comparator for numbers:
 
 ## Multi-Language Reference — Merge Sort
 
-```javascript
-// JavaScript
-function mergeSort(arr) {
-  if (arr.length <= 1) return arr;
-  const mid = Math.floor(arr.length / 2);
-  const left = mergeSort(arr.slice(0, mid));
-  const right = mergeSort(arr.slice(mid));
-  return merge(left, right);
-}
-function merge(left, right) {
-  const result = []; let i = 0, j = 0;
-  while (i < left.length && j < right.length)
-    result.push(left[i] <= right[j] ? left[i++] : right[j++]);
-  return [...result, ...left.slice(i), ...right.slice(j)];
-}
-// Built-in: arr.sort((a, b) => a - b)  ← always use comparator for numbers!
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function mergeSort(arr) {
+>   if (arr.length <= 1) return arr;
+>   const mid = Math.floor(arr.length / 2);
+>   const left = mergeSort(arr.slice(0, mid));
+>   const right = mergeSort(arr.slice(mid));
+>   return merge(left, right);
+> }
+> function merge(left, right) {
+>   const result = []; let i = 0, j = 0;
+>   while (i < left.length && j < right.length)
+>     result.push(left[i] <= right[j] ? left[i++] : right[j++]);
+>   return [...result, ...left.slice(i), ...right.slice(j)];
+> }
+> // Built-in: arr.sort((a, b) => a - b)  ← always use comparator for numbers!
+> ```
 
-```java
-// Java
-public static void mergeSort(int[] arr, int left, int right) {
-    if (left >= right) return;
-    int mid = left + (right - left) / 2;
-    mergeSort(arr, left, mid);
-    mergeSort(arr, mid + 1, right);
-    merge(arr, left, mid, right);
-}
-private static void merge(int[] arr, int l, int m, int r) {
-    int[] tmp = Arrays.copyOfRange(arr, l, r + 1);
-    int i = 0, j = m - l + 1, k = l;
-    while (i <= m - l && j <= r - l)
-        arr[k++] = tmp[i] <= tmp[j] ? tmp[i++] : tmp[j++];
-    while (i <= m - l) arr[k++] = tmp[i++];
-    while (j <= r - l) arr[k++] = tmp[j++];
-}
-// Built-in: Arrays.sort(arr)
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static void mergeSort(int[] arr, int left, int right) {
+>     if (left >= right) return;
+>     int mid = left + (right - left) / 2;
+>     mergeSort(arr, left, mid);
+>     mergeSort(arr, mid + 1, right);
+>     merge(arr, left, mid, right);
+> }
+> private static void merge(int[] arr, int l, int m, int r) {
+>     int[] tmp = Arrays.copyOfRange(arr, l, r + 1);
+>     int i = 0, j = m - l + 1, k = l;
+>     while (i <= m - l && j <= r - l)
+>         arr[k++] = tmp[i] <= tmp[j] ? tmp[i++] : tmp[j++];
+>     while (i <= m - l) arr[k++] = tmp[i++];
+>     while (j <= r - l) arr[k++] = tmp[j++];
+> }
+> // Built-in: Arrays.sort(arr)
+> ```
 
-```python
-# Python
-def merge_sort(arr):
-    if len(arr) <= 1: return arr
-    mid = len(arr) // 2
-    left = merge_sort(arr[:mid])
-    right = merge_sort(arr[mid:])
-    return merge(left, right)
+> [!example]- Python
+> ```python
+> # Python
+> def merge_sort(arr):
+>     if len(arr) <= 1: return arr
+>     mid = len(arr) // 2
+>     left = merge_sort(arr[:mid])
+>     right = merge_sort(arr[mid:])
+>     return merge(left, right)
+>
+> def merge(left, right):
+>     result, i, j = [], 0, 0
+>     while i < len(left) and j < len(right):
+>         if left[i] <= right[j]: result.append(left[i]); i += 1
+>         else: result.append(right[j]); j += 1
+>     return result + left[i:] + right[j:]
+>
+> # Built-in: arr.sort() or sorted(arr)  — TimSort, O(n log n)
+> ```
 
-def merge(left, right):
-    result, i, j = [], 0, 0
-    while i < len(left) and j < len(right):
-        if left[i] <= right[j]: result.append(left[i]); i += 1
-        else: result.append(right[j]); j += 1
-    return result + left[i:] + right[j:]
+> [!example]- C
+> ```c
+> // C
+> void merge(int arr[], int l, int m, int r) {
+>     int n1 = m-l+1, n2 = r-m;
+>     int L[n1], R[n2];
+>     for (int i=0; i<n1; i++) L[i] = arr[l+i];
+>     for (int j=0; j<n2; j++) R[j] = arr[m+1+j];
+>     int i=0, j=0, k=l;
+>     while (i<n1 && j<n2) arr[k++] = L[i]<=R[j] ? L[i++] : R[j++];
+>     while (i<n1) arr[k++] = L[i++];
+>     while (j<n2) arr[k++] = R[j++];
+> }
+> void mergeSort(int arr[], int l, int r) {
+>     if (l < r) {
+>         int m = l + (r-l)/2;
+>         mergeSort(arr, l, m); mergeSort(arr, m+1, r);
+>         merge(arr, l, m, r);
+>     }
+> }
+> // Built-in: qsort(arr, n, sizeof(int), compare) from stdlib.h
+> ```
 
-# Built-in: arr.sort() or sorted(arr)  — TimSort, O(n log n)
-```
-
-```c
-// C
-void merge(int arr[], int l, int m, int r) {
-    int n1 = m-l+1, n2 = r-m;
-    int L[n1], R[n2];
-    for (int i=0; i<n1; i++) L[i] = arr[l+i];
-    for (int j=0; j<n2; j++) R[j] = arr[m+1+j];
-    int i=0, j=0, k=l;
-    while (i<n1 && j<n2) arr[k++] = L[i]<=R[j] ? L[i++] : R[j++];
-    while (i<n1) arr[k++] = L[i++];
-    while (j<n2) arr[k++] = R[j++];
-}
-void mergeSort(int arr[], int l, int r) {
-    if (l < r) {
-        int m = l + (r-l)/2;
-        mergeSort(arr, l, m); mergeSort(arr, m+1, r);
-        merge(arr, l, m, r);
-    }
-}
-// Built-in: qsort(arr, n, sizeof(int), compare) from stdlib.h
-```
-
-```cpp
-// C++
-void mergeSort(vector<int>& arr, int l, int r) {
-    if (l >= r) return;
-    int mid = l + (r - l) / 2;
-    mergeSort(arr, l, mid);
-    mergeSort(arr, mid + 1, r);
-    inplace_merge(arr.begin() + l, arr.begin() + mid + 1, arr.begin() + r + 1);
-}
-// Built-in: sort(arr.begin(), arr.end())  — introsort, O(n log n)
-// Stable:   stable_sort(arr.begin(), arr.end())
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> void mergeSort(vector<int>& arr, int l, int r) {
+>     if (l >= r) return;
+>     int mid = l + (r - l) / 2;
+>     mergeSort(arr, l, mid);
+>     mergeSort(arr, mid + 1, r);
+>     inplace_merge(arr.begin() + l, arr.begin() + mid + 1, arr.begin() + r + 1);
+> }
+> // Built-in: sort(arr.begin(), arr.end())  — introsort, O(n log n)
+> // Stable:   stable_sort(arr.begin(), arr.end())
+> ```
 
 ## Practice & Resources
 

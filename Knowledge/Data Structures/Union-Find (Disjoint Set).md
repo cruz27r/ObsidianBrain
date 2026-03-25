@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Graph, BFS (Breadth-First Search), DFS (Depth-First Search)]
 ---
 
+> [!pattern] Connectivity · Grouping
+
 # Union-Find (Disjoint Set)
 
 ## What it is
@@ -124,90 +126,95 @@ function findRedundantConnection(edges: number[][]): number[] {
 
 ## Multi-Language Reference — Union-Find (Path Compression + Union by Rank)
 
-```javascript
-// JavaScript
-class UnionFind {
-  constructor(n) { this.parent = Array.from({length: n}, (_, i) => i); this.rank = new Array(n).fill(0); }
-  find(x) { if (this.parent[x] !== x) this.parent[x] = this.find(this.parent[x]); return this.parent[x]; }
-  union(x, y) {
-    const [rx, ry] = [this.find(x), this.find(y)];
-    if (rx === ry) return false;
-    if (this.rank[rx] < this.rank[ry]) this.parent[rx] = ry;
-    else if (this.rank[rx] > this.rank[ry]) this.parent[ry] = rx;
-    else { this.parent[ry] = rx; this.rank[rx]++; }
-    return true;
-  }
-  connected(x, y) { return this.find(x) === this.find(y); }
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> class UnionFind {
+>   constructor(n) { this.parent = Array.from({length: n}, (_, i) => i); this.rank = new Array(n).fill(0); }
+>   find(x) { if (this.parent[x] !== x) this.parent[x] = this.find(this.parent[x]); return this.parent[x]; }
+>   union(x, y) {
+>     const [rx, ry] = [this.find(x), this.find(y)];
+>     if (rx === ry) return false;
+>     if (this.rank[rx] < this.rank[ry]) this.parent[rx] = ry;
+>     else if (this.rank[rx] > this.rank[ry]) this.parent[ry] = rx;
+>     else { this.parent[ry] = rx; this.rank[rx]++; }
+>     return true;
+>   }
+>   connected(x, y) { return this.find(x) === this.find(y); }
+> }
+> ```
 
-```java
-// Java
-class UnionFind {
-    int[] parent, rank;
-    UnionFind(int n) { parent = new int[n]; rank = new int[n]; for (int i = 0; i < n; i++) parent[i] = i; }
-    int find(int x) { if (parent[x] != x) parent[x] = find(parent[x]); return parent[x]; }
-    boolean union(int x, int y) {
-        int rx = find(x), ry = find(y);
-        if (rx == ry) return false;
-        if (rank[rx] < rank[ry]) parent[rx] = ry;
-        else if (rank[rx] > rank[ry]) parent[ry] = rx;
-        else { parent[ry] = rx; rank[rx]++; }
-        return true;
-    }
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> class UnionFind {
+>     int[] parent, rank;
+>     UnionFind(int n) { parent = new int[n]; rank = new int[n]; for (int i = 0; i < n; i++) parent[i] = i; }
+>     int find(int x) { if (parent[x] != x) parent[x] = find(parent[x]); return parent[x]; }
+>     boolean union(int x, int y) {
+>         int rx = find(x), ry = find(y);
+>         if (rx == ry) return false;
+>         if (rank[rx] < rank[ry]) parent[rx] = ry;
+>         else if (rank[rx] > rank[ry]) parent[ry] = rx;
+>         else { parent[ry] = rx; rank[rx]++; }
+>         return true;
+>     }
+> }
+> ```
 
-```python
-# Python
-class UnionFind:
-    def __init__(self, n):
-        self.parent = list(range(n))
-        self.rank = [0] * n
-    def find(self, x):
-        if self.parent[x] != x:
-            self.parent[x] = self.find(self.parent[x])
-        return self.parent[x]
-    def union(self, x, y):
-        rx, ry = self.find(x), self.find(y)
-        if rx == ry: return False
-        if self.rank[rx] < self.rank[ry]: self.parent[rx] = ry
-        elif self.rank[rx] > self.rank[ry]: self.parent[ry] = rx
-        else: self.parent[ry] = rx; self.rank[rx] += 1
-        return True
-```
+> [!example]- Python
+> ```python
+> # Python
+> class UnionFind:
+>     def __init__(self, n):
+>         self.parent = list(range(n))
+>         self.rank = [0] * n
+>     def find(self, x):
+>         if self.parent[x] != x:
+>             self.parent[x] = self.find(self.parent[x])
+>         return self.parent[x]
+>     def union(self, x, y):
+>         rx, ry = self.find(x), self.find(y)
+>         if rx == ry: return False
+>         if self.rank[rx] < self.rank[ry]: self.parent[rx] = ry
+>         elif self.rank[rx] > self.rank[ry]: self.parent[ry] = rx
+>         else: self.parent[ry] = rx; self.rank[rx] += 1
+>         return True
+> ```
 
-```c
-// C
-int parent[1001], rnk[1001];
-int find(int x) { return parent[x] == x ? x : (parent[x] = find(parent[x])); }
-int unionFind(int x, int y) {
-    int rx = find(x), ry = find(y);
-    if (rx == ry) return 0;
-    if (rnk[rx] < rnk[ry]) parent[rx] = ry;
-    else if (rnk[rx] > rnk[ry]) parent[ry] = rx;
-    else { parent[ry] = rx; rnk[rx]++; }
-    return 1;
-}
-void init(int n) { for (int i = 0; i <= n; i++) { parent[i] = i; rnk[i] = 0; } }
-```
+> [!example]- C
+> ```c
+> // C
+> int parent[1001], rnk[1001];
+> int find(int x) { return parent[x] == x ? x : (parent[x] = find(parent[x])); }
+> int unionFind(int x, int y) {
+>     int rx = find(x), ry = find(y);
+>     if (rx == ry) return 0;
+>     if (rnk[rx] < rnk[ry]) parent[rx] = ry;
+>     else if (rnk[rx] > rnk[ry]) parent[ry] = rx;
+>     else { parent[ry] = rx; rnk[rx]++; }
+>     return 1;
+> }
+> void init(int n) { for (int i = 0; i <= n; i++) { parent[i] = i; rnk[i] = 0; } }
+> ```
 
-```cpp
-// C++
-struct UnionFind {
-    vector<int> parent, rank;
-    UnionFind(int n) : parent(n), rank(n, 0) { iota(parent.begin(), parent.end(), 0); }
-    int find(int x) { return parent[x] == x ? x : parent[x] = find(parent[x]); }
-    bool unite(int x, int y) {
-        int rx = find(x), ry = find(y);
-        if (rx == ry) return false;
-        if (rank[rx] < rank[ry]) swap(rx, ry);
-        parent[ry] = rx;
-        if (rank[rx] == rank[ry]) rank[rx]++;
-        return true;
-    }
-};
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> struct UnionFind {
+>     vector<int> parent, rank;
+>     UnionFind(int n) : parent(n), rank(n, 0) { iota(parent.begin(), parent.end(), 0); }
+>     int find(int x) { return parent[x] == x ? x : parent[x] = find(parent[x]); }
+>     bool unite(int x, int y) {
+>         int rx = find(x), ry = find(y);
+>         if (rx == ry) return false;
+>         if (rank[rx] < rank[ry]) swap(rx, ry);
+>         parent[ry] = rx;
+>         if (rank[rx] == rank[ry]) rank[rx]++;
+>         return true;
+>     }
+> };
+> ```
 
 ## Practice & Resources
 

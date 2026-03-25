@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Dynamic Programming, Sorting Algorithms, Heap (Priority Queue)]
 ---
 
+> [!pattern] Optimization · Local Choices
+
 # Greedy
 
 ## What It Is
@@ -235,63 +237,68 @@ If you can't articulate why greedy is safe, you probably need DP instead.
 
 ## Multi-Language Reference — Jump Game
 
-```javascript
-// JavaScript
-function canJump(nums) {
-  let maxReach = 0;
-  for (let i = 0; i < nums.length; i++) {
-    if (i > maxReach) return false;
-    maxReach = Math.max(maxReach, i + nums[i]);
-  }
-  return true;
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function canJump(nums) {
+>   let maxReach = 0;
+>   for (let i = 0; i < nums.length; i++) {
+>     if (i > maxReach) return false;
+>     maxReach = Math.max(maxReach, i + nums[i]);
+>   }
+>   return true;
+> }
+> ```
 
-```java
-// Java
-public static boolean canJump(int[] nums) {
-    int maxReach = 0;
-    for (int i = 0; i < nums.length; i++) {
-        if (i > maxReach) return false;
-        maxReach = Math.max(maxReach, i + nums[i]);
-    }
-    return true;
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static boolean canJump(int[] nums) {
+>     int maxReach = 0;
+>     for (int i = 0; i < nums.length; i++) {
+>         if (i > maxReach) return false;
+>         maxReach = Math.max(maxReach, i + nums[i]);
+>     }
+>     return true;
+> }
+> ```
 
-```python
-# Python
-def can_jump(nums):
-    max_reach = 0
-    for i, jump in enumerate(nums):
-        if i > max_reach: return False
-        max_reach = max(max_reach, i + jump)
-    return True
-```
+> [!example]- Python
+> ```python
+> # Python
+> def can_jump(nums):
+>     max_reach = 0
+>     for i, jump in enumerate(nums):
+>         if i > max_reach: return False
+>         max_reach = max(max_reach, i + jump)
+>     return True
+> ```
 
-```c
-// C
-int canJump(int nums[], int n) {
-    int maxReach = 0;
-    for (int i = 0; i < n; i++) {
-        if (i > maxReach) return 0;
-        if (i + nums[i] > maxReach) maxReach = i + nums[i];
-    }
-    return 1;
-}
-```
+> [!example]- C
+> ```c
+> // C
+> int canJump(int nums[], int n) {
+>     int maxReach = 0;
+>     for (int i = 0; i < n; i++) {
+>         if (i > maxReach) return 0;
+>         if (i + nums[i] > maxReach) maxReach = i + nums[i];
+>     }
+>     return 1;
+> }
+> ```
 
-```cpp
-// C++
-bool canJump(vector<int>& nums) {
-    int maxReach = 0;
-    for (int i = 0; i < nums.size(); i++) {
-        if (i > maxReach) return false;
-        maxReach = max(maxReach, i + nums[i]);
-    }
-    return true;
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> bool canJump(vector<int>& nums) {
+>     int maxReach = 0;
+>     for (int i = 0; i < nums.size(); i++) {
+>         if (i > maxReach) return false;
+>         maxReach = max(maxReach, i + nums[i]);
+>     }
+>     return true;
+> }
+> ```
 
 ## Practice & Resources
 

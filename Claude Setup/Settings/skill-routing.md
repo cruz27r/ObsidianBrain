@@ -27,6 +27,10 @@
 - Obsidian vault read/write/search: use `obsidian` MCP (requires Local REST API plugin in Obsidian).
 - Obsidian note capture/routing (vault structure, wikilinks, inbox): use `obsidian-capture`.
 - Client-facing update from dev work (git diff → plain English): use `client-update`.
+- Creating/editing Knowledge/ notes (algorithms, DS, tech concepts): use `knowledge-note-design`.
+- Creating/editing Dev/Projects/ notes (specs, dev logs, architecture): use `dev-note-design`.
+- Creating/editing Business/ notes (client projects, brand guidelines): use `business-note-design`.
+- Creating/editing Career/ notes (interview prep, job tracking): use `career-note-design`.
 - Shopify Admin API: use `shopify` MCP + `shopify-dev` MCP for docs/schema.
 - Print-on-demand products: use `printify` MCP.
 - Mobile app testing (iOS/Android): use `appium` MCP.

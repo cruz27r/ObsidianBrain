@@ -1,1 +1,12 @@
-{}
+{
+  "enabledCssSnippets": [
+    "clean-polish",
+    "knowledge-styles",
+    "dev-styles",
+    "business-styles",
+    "career-styles"
+  ],
+  "theme": "obsidian",
+  "accentColor": "#b7010a",
+  "cssTheme": ""
+}

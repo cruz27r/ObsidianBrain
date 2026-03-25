@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [BFS (Breadth-First Search), DFS (Depth-First Search), Union-Find (Disjoint Set), Heap (Priority Queue)]
 ---
 
+> [!pattern] Adjacency · Traversal · Connectivity
+
 # Graph
 
 ## What it is
@@ -96,52 +98,57 @@ function isValid(r: number, c: number, rows: number, cols: number): boolean {
 
 ## Multi-Language Reference — Build Adjacency List
 
-```javascript
-// JavaScript
-function buildGraph(n, edges) {
-  const graph = Array.from({ length: n }, () => []);
-  for (const [u, v] of edges) { graph[u].push(v); graph[v].push(u); }
-  return graph;
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function buildGraph(n, edges) {
+>   const graph = Array.from({ length: n }, () => []);
+>   for (const [u, v] of edges) { graph[u].push(v); graph[v].push(u); }
+>   return graph;
+> }
+> ```
 
-```java
-// Java
-public static List<List<Integer>> buildGraph(int n, int[][] edges) {
-    List<List<Integer>> graph = new ArrayList<>();
-    for (int i = 0; i < n; i++) graph.add(new ArrayList<>());
-    for (int[] e : edges) { graph.get(e[0]).add(e[1]); graph.get(e[1]).add(e[0]); }
-    return graph;
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static List<List<Integer>> buildGraph(int n, int[][] edges) {
+>     List<List<Integer>> graph = new ArrayList<>();
+>     for (int i = 0; i < n; i++) graph.add(new ArrayList<>());
+>     for (int[] e : edges) { graph.get(e[0]).add(e[1]); graph.get(e[1]).add(e[0]); }
+>     return graph;
+> }
+> ```
 
-```python
-# Python
-from collections import defaultdict
-def build_graph(n, edges):
-    graph = defaultdict(list)
-    for u, v in edges:
-        graph[u].append(v)
-        graph[v].append(u)
-    return graph
-```
+> [!example]- Python
+> ```python
+> # Python
+> from collections import defaultdict
+> def build_graph(n, edges):
+>     graph = defaultdict(list)
+>     for u, v in edges:
+>         graph[u].append(v)
+>         graph[v].append(u)
+>     return graph
+> ```
 
-```c
-// C — adjacency list using arrays
-#define MAXN 1000
-int adj[MAXN][MAXN], deg[MAXN];
-void addEdge(int u, int v) { adj[u][deg[u]++] = v; adj[v][deg[v]++] = u; }
-```
+> [!example]- C
+> ```c
+> // C — adjacency list using arrays
+> #define MAXN 1000
+> int adj[MAXN][MAXN], deg[MAXN];
+> void addEdge(int u, int v) { adj[u][deg[u]++] = v; adj[v][deg[v]++] = u; }
+> ```
 
-```cpp
-// C++
-#include <vector>
-vector<vector<int>> buildGraph(int n, vector<vector<int>>& edges) {
-    vector<vector<int>> graph(n);
-    for (auto& e : edges) { graph[e[0]].push_back(e[1]); graph[e[1]].push_back(e[0]); }
-    return graph;
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> #include <vector>
+> vector<vector<int>> buildGraph(int n, vector<vector<int>>& edges) {
+>     vector<vector<int>> graph(n);
+>     for (auto& e : edges) { graph[e[0]].push_back(e[1]); graph[e[1]].push_back(e[0]); }
+>     return graph;
+> }
+> ```
 
 ## Practice & Resources
 

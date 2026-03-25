@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [BST, Heap (Priority Queue), Tree Traversals, DFS (Depth-First Search), BFS (Breadth-First Search)]
 ---
 
+> [!pattern] Hierarchical · Recursion
+
 # Binary Tree
 
 ## What it is
@@ -167,47 +169,52 @@ Most tree problems follow: **"What do I need from my children to answer the ques
 
 ## Multi-Language Reference — Max Depth of Binary Tree
 
-```javascript
-// JavaScript
-function maxDepth(root) {
-  if (!root) return 0;
-  return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function maxDepth(root) {
+>   if (!root) return 0;
+>   return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+> }
+> ```
 
-```java
-// Java
-public int maxDepth(TreeNode root) {
-    if (root == null) return 0;
-    return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> public int maxDepth(TreeNode root) {
+>     if (root == null) return 0;
+>     return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
+> }
+> ```
 
-```python
-# Python
-def max_depth(root):
-    if not root:
-        return 0
-    return 1 + max(max_depth(root.left), max_depth(root.right))
-```
+> [!example]- Python
+> ```python
+> # Python
+> def max_depth(root):
+>     if not root:
+>         return 0
+>     return 1 + max(max_depth(root.left), max_depth(root.right))
+> ```
 
-```c
-// C
-int maxDepth(struct TreeNode* root) {
-    if (!root) return 0;
-    int left = maxDepth(root->left);
-    int right = maxDepth(root->right);
-    return 1 + (left > right ? left : right);
-}
-```
+> [!example]- C
+> ```c
+> // C
+> int maxDepth(struct TreeNode* root) {
+>     if (!root) return 0;
+>     int left = maxDepth(root->left);
+>     int right = maxDepth(root->right);
+>     return 1 + (left > right ? left : right);
+> }
+> ```
 
-```cpp
-// C++
-int maxDepth(TreeNode* root) {
-    if (!root) return 0;
-    return 1 + max(maxDepth(root->left), maxDepth(root->right));
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> int maxDepth(TreeNode* root) {
+>     if (!root) return 0;
+>     return 1 + max(maxDepth(root->left), maxDepth(root->right));
+> }
+> ```
 
 ## Practice & Resources
 

@@ -1,0 +1,95 @@
+/* ── dev-styles.css ── */
+/* Applies to: Dev/Projects/ */
+
+/* ─── Status banners — title-only strips, content hidden ─── */
+
+/* planning = blue */
+.callout[data-callout="status-planning"] {
+  background-color: rgba(62, 99, 170, 0.1) !important;
+  border-left-color: #3e63aa !important;
+  padding: 8px 16px !important;
+  margin-bottom: 20px !important;
+}
+.callout[data-callout="status-planning"] .callout-title {
+  color: #7eb8f7 !important;
+  font-size: 0.75em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.14em !important;
+}
+.callout[data-callout="status-planning"] .callout-content { display: none !important; }
+
+/* active = green */
+.callout[data-callout="status-active"] {
+  background-color: rgba(34, 120, 60, 0.12) !important;
+  border-left-color: #22c55e !important;
+  padding: 8px 16px !important;
+  margin-bottom: 20px !important;
+}
+.callout[data-callout="status-active"] .callout-title {
+  color: #4ade80 !important;
+  font-size: 0.75em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.14em !important;
+}
+.callout[data-callout="status-active"] .callout-content { display: none !important; }
+
+/* paused = amber */
+.callout[data-callout="status-paused"] {
+  background-color: rgba(180, 130, 20, 0.1) !important;
+  border-left-color: #d97706 !important;
+  padding: 8px 16px !important;
+  margin-bottom: 20px !important;
+}
+.callout[data-callout="status-paused"] .callout-title {
+  color: #fbbf24 !important;
+  font-size: 0.75em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.14em !important;
+}
+.callout[data-callout="status-paused"] .callout-content { display: none !important; }
+
+/* complete = muted green */
+.callout[data-callout="status-complete"] {
+  background-color: rgba(60, 80, 60, 0.1) !important;
+  border-left-color: #4b7a4b !important;
+  padding: 8px 16px !important;
+  margin-bottom: 20px !important;
+}
+.callout[data-callout="status-complete"] .callout-title {
+  color: #86b086 !important;
+  font-size: 0.75em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.14em !important;
+}
+.callout[data-callout="status-complete"] .callout-content { display: none !important; }
+
+/* ─── Architecture section ─── */
+.callout[data-callout="arch"] {
+  background-color: rgba(40, 40, 60, 0.3) !important;
+  border-left-color: #7eb8f7 !important;
+}
+.callout[data-callout="arch"] .callout-title {
+  color: #7eb8f7 !important;
+  font-size: 0.8em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+}
+
+/* ─── Completed tasks: fade + strikethrough ─── */
+.task-list-item.is-checked {
+  opacity: 0.5 !important;
+  text-decoration: line-through !important;
+}
+.task-list-item:not(.is-checked) > .task-list-item-checkbox {
+  border-color: #3e63aa !important;
+}
+
+/* ─── Table code cells: blue monospace ─── */
+.markdown-preview-view table td code,
+.markdown-preview-view table th code {
+  background-color: rgba(30, 30, 50, 0.5) !important;
+  padding: 1px 6px !important;
+  border-radius: 4px !important;
+  font-size: 0.88em !important;
+  color: #7eb8f7 !important;
+}

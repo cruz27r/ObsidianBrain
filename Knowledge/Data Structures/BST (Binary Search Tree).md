@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Binary Tree, Tree Traversals, Binary Search]
 ---
 
+> [!pattern] Hierarchical · Searching · Sorting
+
 # BST (Binary Search Tree)
 
 ## What it is
@@ -11,13 +13,13 @@ A binary tree with one critical property: **for every node, all values in its le
 
 This isn't just about immediate children — it applies to **all descendants**.
 
-## Complexity
-| Operation | Balanced BST | Degenerate (sorted insert) |
-|---|---|---|
-| Search | O(log n) | O(n) |
-| Insert | O(log n) | O(n) |
-| Delete | O(log n) | O(n) |
-| Min / Max | O(log n) | O(n) |
+> [!complexity] Complexity
+> | Operation | Balanced BST | Degenerate (sorted insert) |
+> |---|---|---|
+> | Search | O(log n) | O(n) |
+> | Insert | O(log n) | O(n) |
+> | Delete | O(log n) | O(n) |
+> | Min / Max | O(log n) | O(n) |
 
 **Degenerate case**: inserting already-sorted data into a plain BST creates a [[Linked List|linked list]]. Self-balancing BSTs (AVL, Red-Black) prevent this — JS `Map`/`Set` use these internally.
 
@@ -102,45 +104,50 @@ Reach for BST when you need sorted iteration or range queries.
 
 ## Multi-Language Reference — BST Search
 
-```javascript
-// JavaScript
-function search(root, target) {
-  if (!root || root.val === target) return root;
-  return target < root.val ? search(root.left, target) : search(root.right, target);
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function search(root, target) {
+>   if (!root || root.val === target) return root;
+>   return target < root.val ? search(root.left, target) : search(root.right, target);
+> }
+> ```
 
-```java
-// Java
-public TreeNode search(TreeNode root, int target) {
-    if (root == null || root.val == target) return root;
-    return target < root.val ? search(root.left, target) : search(root.right, target);
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> public TreeNode search(TreeNode root, int target) {
+>     if (root == null || root.val == target) return root;
+>     return target < root.val ? search(root.left, target) : search(root.right, target);
+> }
+> ```
 
-```python
-# Python
-def search(root, target):
-    if not root or root.val == target:
-        return root
-    return search(root.left, target) if target < root.val else search(root.right, target)
-```
+> [!example]- Python
+> ```python
+> # Python
+> def search(root, target):
+>     if not root or root.val == target:
+>         return root
+>     return search(root.left, target) if target < root.val else search(root.right, target)
+> ```
 
-```c
-// C
-struct TreeNode* search(struct TreeNode* root, int target) {
-    if (!root || root->val == target) return root;
-    return target < root->val ? search(root->left, target) : search(root->right, target);
-}
-```
+> [!example]- C
+> ```c
+> // C
+> struct TreeNode* search(struct TreeNode* root, int target) {
+>     if (!root || root->val == target) return root;
+>     return target < root->val ? search(root->left, target) : search(root->right, target);
+> }
+> ```
 
-```cpp
-// C++
-TreeNode* search(TreeNode* root, int target) {
-    if (!root || root->val == target) return root;
-    return target < root->val ? search(root->left, target) : search(root->right, target);
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> TreeNode* search(TreeNode* root, int target) {
+>     if (!root || root->val == target) return root;
+>     return target < root->val ? search(root->left, target) : search(root->right, target);
+> }
+> ```
 
 ## Practice & Resources
 

@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Arrays & Strings, Sliding Window, Linked List]
 ---
 
+> [!pattern] Array · Linear Scan
+
 # Two Pointers
 
 ## What It Is
@@ -57,15 +59,14 @@ write read
 
 ---
 
-## When to Use
-
-- Sorted array pair sum (target = a + b)
-- Palindrome check (does string read same forwards and backwards?)
-- Remove duplicates from sorted array in-place
-- Container with most water (maximize area between two lines)
-- Any problem asking for a pair satisfying a condition in a sorted array
-
-**Dead giveaway**: "sorted array", "find a pair", "in-place removal", "check palindrome"
+> [!use] When to Use
+> - Sorted array pair sum (target = a + b)
+> - Palindrome check (does string read same forwards and backwards?)
+> - Remove duplicates from sorted array in-place
+> - Container with most water (maximize area between two lines)
+> - Any problem asking for a pair satisfying a condition in a sorted array
+>
+> **Dead giveaway**: "sorted array", "find a pair", "in-place removal", "check palindrome"
 
 ---
 
@@ -199,14 +200,13 @@ function maxArea(height: number[]): number {
 
 ---
 
-## Complexity
-
-| Problem | Time | Space |
-|---|---|---|
-| Two sum sorted | O(n) | O(1) |
-| Remove duplicates | O(n) | O(1) |
-| Valid palindrome | O(n) | O(1) |
-| Container with most water | O(n) | O(1) |
+> [!complexity] Complexity
+> | Problem | Time | Space |
+> |---|---|---|
+> | Two sum sorted | O(n) | O(1) |
+> | Remove duplicates | O(n) | O(1) |
+> | Valid palindrome | O(n) | O(1) |
+> | Container with most water | O(n) | O(1) |
 
 All two-pointer solutions achieve O(1) space — that is often the whole point.
 
@@ -223,72 +223,77 @@ All two-pointer solutions achieve O(1) space — that is often the whole point.
 
 ## Multi-Language Reference — Two Sum Sorted
 
-```javascript
-// JavaScript
-function twoSumSorted(numbers, target) {
-  let left = 0, right = numbers.length - 1;
-  while (left < right) {
-    const sum = numbers[left] + numbers[right];
-    if (sum === target) return [left + 1, right + 1];
-    sum < target ? left++ : right--;
-  }
-  return [-1, -1];
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function twoSumSorted(numbers, target) {
+>   let left = 0, right = numbers.length - 1;
+>   while (left < right) {
+>     const sum = numbers[left] + numbers[right];
+>     if (sum === target) return [left + 1, right + 1];
+>     sum < target ? left++ : right--;
+>   }
+>   return [-1, -1];
+> }
+> ```
 
-```java
-// Java
-public static int[] twoSumSorted(int[] numbers, int target) {
-    int left = 0, right = numbers.length - 1;
-    while (left < right) {
-        int sum = numbers[left] + numbers[right];
-        if (sum == target) return new int[]{left + 1, right + 1};
-        else if (sum < target) left++;
-        else right--;
-    }
-    return new int[]{-1, -1};
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static int[] twoSumSorted(int[] numbers, int target) {
+>     int left = 0, right = numbers.length - 1;
+>     while (left < right) {
+>         int sum = numbers[left] + numbers[right];
+>         if (sum == target) return new int[]{left + 1, right + 1};
+>         else if (sum < target) left++;
+>         else right--;
+>     }
+>     return new int[]{-1, -1};
+> }
+> ```
 
-```python
-# Python
-def two_sum_sorted(numbers, target):
-    left, right = 0, len(numbers) - 1
-    while left < right:
-        s = numbers[left] + numbers[right]
-        if s == target: return [left + 1, right + 1]
-        elif s < target: left += 1
-        else: right -= 1
-    return [-1, -1]
-```
+> [!example]- Python
+> ```python
+> # Python
+> def two_sum_sorted(numbers, target):
+>     left, right = 0, len(numbers) - 1
+>     while left < right:
+>         s = numbers[left] + numbers[right]
+>         if s == target: return [left + 1, right + 1]
+>         elif s < target: left += 1
+>         else: right -= 1
+>     return [-1, -1]
+> ```
 
-```c
-// C
-void twoSumSorted(int numbers[], int n, int target, int result[2]) {
-    int left = 0, right = n - 1;
-    while (left < right) {
-        int sum = numbers[left] + numbers[right];
-        if (sum == target) { result[0] = left+1; result[1] = right+1; return; }
-        else if (sum < target) left++;
-        else right--;
-    }
-    result[0] = result[1] = -1;
-}
-```
+> [!example]- C
+> ```c
+> // C
+> void twoSumSorted(int numbers[], int n, int target, int result[2]) {
+>     int left = 0, right = n - 1;
+>     while (left < right) {
+>         int sum = numbers[left] + numbers[right];
+>         if (sum == target) { result[0] = left+1; result[1] = right+1; return; }
+>         else if (sum < target) left++;
+>         else right--;
+>     }
+>     result[0] = result[1] = -1;
+> }
+> ```
 
-```cpp
-// C++
-vector<int> twoSumSorted(vector<int>& numbers, int target) {
-    int left = 0, right = numbers.size() - 1;
-    while (left < right) {
-        int sum = numbers[left] + numbers[right];
-        if (sum == target) return {left + 1, right + 1};
-        else if (sum < target) left++;
-        else right--;
-    }
-    return {-1, -1};
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> vector<int> twoSumSorted(vector<int>& numbers, int target) {
+>     int left = 0, right = numbers.size() - 1;
+>     while (left < right) {
+>         int sum = numbers[left] + numbers[right];
+>         if (sum == target) return {left + 1, right + 1};
+>         else if (sum < target) left++;
+>         else right--;
+>     }
+>     return {-1, -1};
+> }
+> ```
 
 ## Practice & Resources
 

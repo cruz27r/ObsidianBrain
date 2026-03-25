@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Sorting Algorithms, Binary Search, Dynamic Programming]
 ---
 
+> [!pattern] Recursion · Subproblem Decomposition
+
 # Divide & Conquer
 
 ## What It Is
@@ -221,16 +223,15 @@ function divideAndConquer(problem: Problem): Solution {
 
 ---
 
-## Complexity Summary
-
-| Algorithm | Recurrence | Time |
-|---|---|---|
-| Binary search | T(n) = T(n/2) + O(1) | O(log n) |
-| Merge sort | T(n) = 2T(n/2) + O(n) | O(n log n) |
-| Quick sort (avg) | T(n) = 2T(n/2) + O(n) | O(n log n) |
-| Quick sort (worst) | T(n) = T(n-1) + O(n) | O(n²) |
-| Max subarray (D&C) | T(n) = 2T(n/2) + O(n) | O(n log n) |
-| Count inversions | T(n) = 2T(n/2) + O(n) | O(n log n) |
+> [!complexity] Complexity Summary
+> | Algorithm | Recurrence | Time |
+> |---|---|---|
+> | Binary search | T(n) = T(n/2) + O(1) | O(log n) |
+> | Merge sort | T(n) = 2T(n/2) + O(n) | O(n log n) |
+> | Quick sort (avg) | T(n) = 2T(n/2) + O(n) | O(n log n) |
+> | Quick sort (worst) | T(n) = T(n-1) + O(n) | O(n²) |
+> | Max subarray (D&C) | T(n) = 2T(n/2) + O(n) | O(n log n) |
+> | Count inversions | T(n) = 2T(n/2) + O(n) | O(n log n) |
 
 ---
 
@@ -245,62 +246,67 @@ function divideAndConquer(problem: Problem): Solution {
 
 ## Multi-Language Reference — Binary Search (D&C form)
 
-```javascript
-// JavaScript (recursive D&C form)
-function binarySearch(arr, target, low = 0, high = arr.length - 1) {
-  if (low > high) return -1;
-  const mid = Math.floor((low + high) / 2);
-  if (arr[mid] === target) return mid;
-  return arr[mid] < target
-    ? binarySearch(arr, target, mid + 1, high)
-    : binarySearch(arr, target, low, mid - 1);
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript (recursive D&C form)
+> function binarySearch(arr, target, low = 0, high = arr.length - 1) {
+>   if (low > high) return -1;
+>   const mid = Math.floor((low + high) / 2);
+>   if (arr[mid] === target) return mid;
+>   return arr[mid] < target
+>     ? binarySearch(arr, target, mid + 1, high)
+>     : binarySearch(arr, target, low, mid - 1);
+> }
+> ```
 
-```java
-// Java
-public static int binarySearch(int[] arr, int target, int low, int high) {
-    if (low > high) return -1;
-    int mid = low + (high - low) / 2;
-    if (arr[mid] == target) return mid;
-    return arr[mid] < target
-        ? binarySearch(arr, target, mid + 1, high)
-        : binarySearch(arr, target, low, mid - 1);
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static int binarySearch(int[] arr, int target, int low, int high) {
+>     if (low > high) return -1;
+>     int mid = low + (high - low) / 2;
+>     if (arr[mid] == target) return mid;
+>     return arr[mid] < target
+>         ? binarySearch(arr, target, mid + 1, high)
+>         : binarySearch(arr, target, low, mid - 1);
+> }
+> ```
 
-```python
-# Python
-def binary_search(arr, target, low=0, high=None):
-    if high is None: high = len(arr) - 1
-    if low > high: return -1
-    mid = (low + high) // 2
-    if arr[mid] == target: return mid
-    if arr[mid] < target: return binary_search(arr, target, mid + 1, high)
-    return binary_search(arr, target, low, mid - 1)
-```
+> [!example]- Python
+> ```python
+> # Python
+> def binary_search(arr, target, low=0, high=None):
+>     if high is None: high = len(arr) - 1
+>     if low > high: return -1
+>     mid = (low + high) // 2
+>     if arr[mid] == target: return mid
+>     if arr[mid] < target: return binary_search(arr, target, mid + 1, high)
+>     return binary_search(arr, target, low, mid - 1)
+> ```
 
-```c
-// C
-int binarySearch(int arr[], int low, int high, int target) {
-    if (low > high) return -1;
-    int mid = low + (high - low) / 2;
-    if (arr[mid] == target) return mid;
-    if (arr[mid] < target) return binarySearch(arr, mid + 1, high, target);
-    return binarySearch(arr, low, mid - 1, target);
-}
-```
+> [!example]- C
+> ```c
+> // C
+> int binarySearch(int arr[], int low, int high, int target) {
+>     if (low > high) return -1;
+>     int mid = low + (high - low) / 2;
+>     if (arr[mid] == target) return mid;
+>     if (arr[mid] < target) return binarySearch(arr, mid + 1, high, target);
+>     return binarySearch(arr, low, mid - 1, target);
+> }
+> ```
 
-```cpp
-// C++
-int binarySearch(vector<int>& arr, int low, int high, int target) {
-    if (low > high) return -1;
-    int mid = low + (high - low) / 2;
-    if (arr[mid] == target) return mid;
-    if (arr[mid] < target) return binarySearch(arr, mid + 1, high, target);
-    return binarySearch(arr, low, mid - 1, target);
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> int binarySearch(vector<int>& arr, int low, int high, int target) {
+>     if (low > high) return -1;
+>     int mid = low + (high - low) / 2;
+>     if (arr[mid] == target) return mid;
+>     if (arr[mid] < target) return binarySearch(arr, mid + 1, high, target);
+>     return binarySearch(arr, low, mid - 1, target);
+> }
+> ```
 
 ## Practice & Resources
 

@@ -6,6 +6,8 @@ tech: [discord.js, claude-code, bun, anthropic]
 linked: []
 ---
 
+> [!status-complete] Status — Complete
+
 # Discord ↔ Claude Code Channel — Setup Guide
 
 ## What This Is

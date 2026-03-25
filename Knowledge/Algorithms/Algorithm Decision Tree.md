@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [BFS (Breadth-First Search), DFS (Depth-First Search), Dynamic Programming, Two Pointers, Sliding Window, Binary Search, Backtracking, Greedy, Union-Find (Disjoint Set)]
 ---
 
+> [!pattern] Meta · Navigation
+
 # Algorithm Decision Tree
 
 Use this when you see a problem and don't know where to start. Follow the questions.

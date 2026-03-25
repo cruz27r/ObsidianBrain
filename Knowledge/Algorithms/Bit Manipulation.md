@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Arrays & Strings, Dynamic Programming]
 ---
 
+> [!pattern] Bitwise · XOR Tricks
+
 # Bit Manipulation
 
 ## Why It Matters
@@ -323,76 +325,81 @@ const bit = (n: number, i: number) => (n >>> i) & 1; // use >>> for unsigned shi
 
 ## Multi-Language Reference — XOR Single Number + Count Set Bits
 
-```javascript
-// JavaScript
-function singleNumber(nums) {
-  return nums.reduce((acc, n) => acc ^ n, 0);
-}
-function countSetBits(n) {
-  let count = 0;
-  while (n) { n &= n - 1; count++; }
-  return count;
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function singleNumber(nums) {
+>   return nums.reduce((acc, n) => acc ^ n, 0);
+> }
+> function countSetBits(n) {
+>   let count = 0;
+>   while (n) { n &= n - 1; count++; }
+>   return count;
+> }
+> ```
 
-```java
-// Java
-public static int singleNumber(int[] nums) {
-    int result = 0;
-    for (int n : nums) result ^= n;
-    return result;
-}
-public static int countSetBits(int n) {
-    int count = 0;
-    while (n != 0) { n &= n - 1; count++; }
-    return count;
-}
-// Built-in: Integer.bitCount(n)  — counts set bits
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static int singleNumber(int[] nums) {
+>     int result = 0;
+>     for (int n : nums) result ^= n;
+>     return result;
+> }
+> public static int countSetBits(int n) {
+>     int count = 0;
+>     while (n != 0) { n &= n - 1; count++; }
+>     return count;
+> }
+> // Built-in: Integer.bitCount(n)  — counts set bits
+> ```
 
-```python
-# Python
-def single_number(nums):
-    result = 0
-    for n in nums: result ^= n
-    return result
+> [!example]- Python
+> ```python
+> # Python
+> def single_number(nums):
+>     result = 0
+>     for n in nums: result ^= n
+>     return result
+>
+> def count_set_bits(n):
+>     count = 0
+>     while n:
+>         n &= n - 1
+>         count += 1
+>     return count
+> # Built-in: bin(n).count('1')  or  n.bit_count() (Python 3.10+)
+> ```
 
-def count_set_bits(n):
-    count = 0
-    while n:
-        n &= n - 1
-        count += 1
-    return count
-# Built-in: bin(n).count('1')  or  n.bit_count() (Python 3.10+)
-```
+> [!example]- C
+> ```c
+> // C
+> int singleNumber(int nums[], int n) {
+>     int result = 0;
+>     for (int i = 0; i < n; i++) result ^= nums[i];
+>     return result;
+> }
+> int countSetBits(unsigned int n) {
+>     int count = 0;
+>     while (n) { n &= n - 1; count++; }
+>     return count;
+> }
+> // Built-in: __builtin_popcount(n)  (GCC extension)
+> ```
 
-```c
-// C
-int singleNumber(int nums[], int n) {
-    int result = 0;
-    for (int i = 0; i < n; i++) result ^= nums[i];
-    return result;
-}
-int countSetBits(unsigned int n) {
-    int count = 0;
-    while (n) { n &= n - 1; count++; }
-    return count;
-}
-// Built-in: __builtin_popcount(n)  (GCC extension)
-```
-
-```cpp
-// C++
-int singleNumber(vector<int>& nums) {
-    int result = 0;
-    for (int n : nums) result ^= n;
-    return result;
-}
-int countSetBits(int n) {
-    return __builtin_popcount(n); // GCC intrinsic, O(1)
-}
-// Also: std::bitset<32>(n).count()
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> int singleNumber(vector<int>& nums) {
+>     int result = 0;
+>     for (int n : nums) result ^= n;
+>     return result;
+> }
+> int countSetBits(int n) {
+>     return __builtin_popcount(n); // GCC intrinsic, O(1)
+> }
+> // Also: std::bitset<32>(n).count()
+> ```
 
 ## Practice & Resources
 

@@ -4,14 +4,16 @@ created: 2026-03-21
 related: [BFS (Breadth-First Search), Stack, Graph, Backtracking, Tree Traversals]
 ---
 
+> [!pattern] Graph Traversal · Recursion · Stack
+
 # DFS (Depth-First Search)
 
 ## What it is
 Explore a graph or tree by going **as deep as possible** before backtracking. Uses recursion (implicit call stack) or an explicit stack.
 
-## Complexity
-- Time: O(V + E) for graphs, O(n) for trees
-- Space: O(V) for visited set + O(h) call stack where h = height/depth
+> [!complexity] Complexity
+> - Time: O(V + E) for graphs, O(n) for trees
+> - Space: O(V) for visited set + O(h) call stack where h = height/depth
 
 ## Diagram — DFS traversal path (preorder)
 
@@ -158,57 +160,62 @@ function topoSort(graph: Map<number, number[]>, n: number): number[] {
 
 ## Multi-Language Reference — DFS on Graph (recursive)
 
-```javascript
-// JavaScript
-function dfs(graph, node, visited = new Set()) {
-  visited.add(node);
-  for (const neighbor of graph.get(node) ?? []) {
-    if (!visited.has(neighbor)) dfs(graph, neighbor, visited);
-  }
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function dfs(graph, node, visited = new Set()) {
+>   visited.add(node);
+>   for (const neighbor of graph.get(node) ?? []) {
+>     if (!visited.has(neighbor)) dfs(graph, neighbor, visited);
+>   }
+> }
+> ```
 
-```java
-// Java
-public static void dfs(Map<Integer, List<Integer>> graph, int node, Set<Integer> visited) {
-    visited.add(node);
-    for (int neighbor : graph.getOrDefault(node, Collections.emptyList())) {
-        if (!visited.contains(neighbor)) dfs(graph, neighbor, visited);
-    }
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static void dfs(Map<Integer, List<Integer>> graph, int node, Set<Integer> visited) {
+>     visited.add(node);
+>     for (int neighbor : graph.getOrDefault(node, Collections.emptyList())) {
+>         if (!visited.contains(neighbor)) dfs(graph, neighbor, visited);
+>     }
+> }
+> ```
 
-```python
-# Python
-def dfs(graph, node, visited=None):
-    if visited is None: visited = set()
-    visited.add(node)
-    for neighbor in graph.get(node, []):
-        if neighbor not in visited:
-            dfs(graph, neighbor, visited)
-    return visited
-```
+> [!example]- Python
+> ```python
+> # Python
+> def dfs(graph, node, visited=None):
+>     if visited is None: visited = set()
+>     visited.add(node)
+>     for neighbor in graph.get(node, []):
+>         if neighbor not in visited:
+>             dfs(graph, neighbor, visited)
+>     return visited
+> ```
 
-```c
-// C (recursive DFS on adjacency matrix)
-int visited[MAX];
-void dfs(int adj[][MAX], int n, int node) {
-    visited[node] = 1;
-    for (int i = 0; i < n; i++) {
-        if (adj[node][i] && !visited[i]) dfs(adj, n, i);
-    }
-}
-```
+> [!example]- C
+> ```c
+> // C (recursive DFS on adjacency matrix)
+> int visited[MAX];
+> void dfs(int adj[][MAX], int n, int node) {
+>     visited[node] = 1;
+>     for (int i = 0; i < n; i++) {
+>         if (adj[node][i] && !visited[i]) dfs(adj, n, i);
+>     }
+> }
+> ```
 
-```cpp
-// C++
-void dfs(unordered_map<int, vector<int>>& graph, int node, unordered_set<int>& visited) {
-    visited.insert(node);
-    for (int neighbor : graph[node]) {
-        if (!visited.count(neighbor)) dfs(graph, neighbor, visited);
-    }
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> void dfs(unordered_map<int, vector<int>>& graph, int node, unordered_set<int>& visited) {
+>     visited.insert(node);
+>     for (int neighbor : graph[node]) {
+>         if (!visited.count(neighbor)) dfs(graph, neighbor, visited);
+>     }
+> }
+> ```
 
 ## Practice & Resources
 

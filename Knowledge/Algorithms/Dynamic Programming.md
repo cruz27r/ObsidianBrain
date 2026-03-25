@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Recursion, Divide & Conquer]
 ---
 
+> [!pattern] Optimization · Memoization · Tabulation
+
 # Dynamic Programming
 
 ## What It Is
@@ -428,70 +430,75 @@ function lcsOptimal(s1: string, s2: string): number {
 
 ## Multi-Language Reference — Coin Change (Bottom-Up DP)
 
-```javascript
-// JavaScript
-function coinChange(coins, amount) {
-  const dp = new Array(amount + 1).fill(Infinity);
-  dp[0] = 0;
-  for (let i = 1; i <= amount; i++)
-    for (const coin of coins)
-      if (coin <= i && dp[i - coin] !== Infinity)
-        dp[i] = Math.min(dp[i], dp[i - coin] + 1);
-  return dp[amount] === Infinity ? -1 : dp[amount];
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function coinChange(coins, amount) {
+>   const dp = new Array(amount + 1).fill(Infinity);
+>   dp[0] = 0;
+>   for (let i = 1; i <= amount; i++)
+>     for (const coin of coins)
+>       if (coin <= i && dp[i - coin] !== Infinity)
+>         dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+>   return dp[amount] === Infinity ? -1 : dp[amount];
+> }
+> ```
 
-```java
-// Java
-public static int coinChange(int[] coins, int amount) {
-    int[] dp = new int[amount + 1];
-    Arrays.fill(dp, Integer.MAX_VALUE);
-    dp[0] = 0;
-    for (int i = 1; i <= amount; i++)
-        for (int coin : coins)
-            if (coin <= i && dp[i - coin] != Integer.MAX_VALUE)
-                dp[i] = Math.min(dp[i], dp[i - coin] + 1);
-    return dp[amount] == Integer.MAX_VALUE ? -1 : dp[amount];
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static int coinChange(int[] coins, int amount) {
+>     int[] dp = new int[amount + 1];
+>     Arrays.fill(dp, Integer.MAX_VALUE);
+>     dp[0] = 0;
+>     for (int i = 1; i <= amount; i++)
+>         for (int coin : coins)
+>             if (coin <= i && dp[i - coin] != Integer.MAX_VALUE)
+>                 dp[i] = Math.min(dp[i], dp[i - coin] + 1);
+>     return dp[amount] == Integer.MAX_VALUE ? -1 : dp[amount];
+> }
+> ```
 
-```python
-# Python
-def coin_change(coins, amount):
-    dp = [float('inf')] * (amount + 1)
-    dp[0] = 0
-    for i in range(1, amount + 1):
-        for coin in coins:
-            if coin <= i and dp[i - coin] != float('inf'):
-                dp[i] = min(dp[i], dp[i - coin] + 1)
-    return dp[amount] if dp[amount] != float('inf') else -1
-```
+> [!example]- Python
+> ```python
+> # Python
+> def coin_change(coins, amount):
+>     dp = [float('inf')] * (amount + 1)
+>     dp[0] = 0
+>     for i in range(1, amount + 1):
+>         for coin in coins:
+>             if coin <= i and dp[i - coin] != float('inf'):
+>                 dp[i] = min(dp[i], dp[i - coin] + 1)
+>     return dp[amount] if dp[amount] != float('inf') else -1
+> ```
 
-```c
-// C
-int coinChange(int coins[], int coinsSize, int amount) {
-    int dp[amount + 1];
-    for (int i = 0; i <= amount; i++) dp[i] = amount + 1;
-    dp[0] = 0;
-    for (int i = 1; i <= amount; i++)
-        for (int j = 0; j < coinsSize; j++)
-            if (coins[j] <= i) dp[i] = dp[i] < dp[i - coins[j]] + 1 ? dp[i] : dp[i - coins[j]] + 1;
-    return dp[amount] > amount ? -1 : dp[amount];
-}
-```
+> [!example]- C
+> ```c
+> // C
+> int coinChange(int coins[], int coinsSize, int amount) {
+>     int dp[amount + 1];
+>     for (int i = 0; i <= amount; i++) dp[i] = amount + 1;
+>     dp[0] = 0;
+>     for (int i = 1; i <= amount; i++)
+>         for (int j = 0; j < coinsSize; j++)
+>             if (coins[j] <= i) dp[i] = dp[i] < dp[i - coins[j]] + 1 ? dp[i] : dp[i - coins[j]] + 1;
+>     return dp[amount] > amount ? -1 : dp[amount];
+> }
+> ```
 
-```cpp
-// C++
-int coinChange(vector<int>& coins, int amount) {
-    vector<int> dp(amount + 1, INT_MAX);
-    dp[0] = 0;
-    for (int i = 1; i <= amount; i++)
-        for (int coin : coins)
-            if (coin <= i && dp[i - coin] != INT_MAX)
-                dp[i] = min(dp[i], dp[i - coin] + 1);
-    return dp[amount] == INT_MAX ? -1 : dp[amount];
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> int coinChange(vector<int>& coins, int amount) {
+>     vector<int> dp(amount + 1, INT_MAX);
+>     dp[0] = 0;
+>     for (int i = 1; i <= amount; i++)
+>         for (int coin : coins)
+>             if (coin <= i && dp[i - coin] != INT_MAX)
+>                 dp[i] = min(dp[i], dp[i - coin] + 1);
+>     return dp[amount] == INT_MAX ? -1 : dp[amount];
+> }
+> ```
 
 ## Practice & Resources
 

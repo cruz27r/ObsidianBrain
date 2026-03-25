@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Arrays & Strings, Two Pointers, Hash Tables]
 ---
 
+> [!pattern] Array · Two-Pointer Variant
+
 # Sliding Window
 
 ## What It Is
@@ -66,14 +68,13 @@ find longest substring with no repeats:
 
 ---
 
-## When to Use
-
-- "Maximum/minimum sum subarray of size k" → fixed window
-- "Longest substring/subarray satisfying some condition" → variable window
-- "Minimum length subarray/substring satisfying some condition" → variable window
-- Any subarray/substring problem where you can efficiently update a running state as the window moves
-
-**Dead giveaway**: "contiguous subarray", "substring", "window of size k", "longest/shortest satisfying"
+> [!use] When to Use
+> - "Maximum/minimum sum subarray of size k" → fixed window
+> - "Longest substring/subarray satisfying some condition" → variable window
+> - "Minimum length subarray/substring satisfying some condition" → variable window
+> - Any subarray/substring problem where you can efficiently update a running state as the window moves
+>
+> **Dead giveaway**: "contiguous subarray", "substring", "window of size k", "longest/shortest satisfying"
 
 ---
 
@@ -234,13 +235,12 @@ The only thing that changes between problems is what `windowState` is and what "
 
 ---
 
-## Complexity
-
-| Problem | Time | Space |
-|---|---|---|
-| Max sum subarray (fixed) | O(n) | O(1) |
-| Longest no-repeat substring | O(n) | O(k) — alphabet size |
-| Minimum window substring | O(n + m) | O(n + m) |
+> [!complexity] Complexity
+> | Problem | Time | Space |
+> |---|---|---|
+> | Max sum subarray (fixed) | O(n) | O(1) |
+> | Longest no-repeat substring | O(n) | O(k) — alphabet size |
+> | Minimum window substring | O(n + m) | O(n + m) |
 
 ---
 
@@ -255,71 +255,76 @@ The only thing that changes between problems is what `windowState` is and what "
 
 ## Multi-Language Reference — Max Sum Subarray of Size k
 
-```javascript
-// JavaScript
-function maxSumSubarray(nums, k) {
-  let windowSum = nums.slice(0, k).reduce((a, b) => a + b, 0);
-  let maxSum = windowSum;
-  for (let i = k; i < nums.length; i++) {
-    windowSum += nums[i] - nums[i - k];
-    maxSum = Math.max(maxSum, windowSum);
-  }
-  return maxSum;
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function maxSumSubarray(nums, k) {
+>   let windowSum = nums.slice(0, k).reduce((a, b) => a + b, 0);
+>   let maxSum = windowSum;
+>   for (let i = k; i < nums.length; i++) {
+>     windowSum += nums[i] - nums[i - k];
+>     maxSum = Math.max(maxSum, windowSum);
+>   }
+>   return maxSum;
+> }
+> ```
 
-```java
-// Java
-public static int maxSumSubarray(int[] nums, int k) {
-    int windowSum = 0;
-    for (int i = 0; i < k; i++) windowSum += nums[i];
-    int maxSum = windowSum;
-    for (int i = k; i < nums.length; i++) {
-        windowSum += nums[i] - nums[i - k];
-        maxSum = Math.max(maxSum, windowSum);
-    }
-    return maxSum;
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static int maxSumSubarray(int[] nums, int k) {
+>     int windowSum = 0;
+>     for (int i = 0; i < k; i++) windowSum += nums[i];
+>     int maxSum = windowSum;
+>     for (int i = k; i < nums.length; i++) {
+>         windowSum += nums[i] - nums[i - k];
+>         maxSum = Math.max(maxSum, windowSum);
+>     }
+>     return maxSum;
+> }
+> ```
 
-```python
-# Python
-def max_sum_subarray(nums, k):
-    window_sum = sum(nums[:k])
-    max_sum = window_sum
-    for i in range(k, len(nums)):
-        window_sum += nums[i] - nums[i - k]
-        max_sum = max(max_sum, window_sum)
-    return max_sum
-```
+> [!example]- Python
+> ```python
+> # Python
+> def max_sum_subarray(nums, k):
+>     window_sum = sum(nums[:k])
+>     max_sum = window_sum
+>     for i in range(k, len(nums)):
+>         window_sum += nums[i] - nums[i - k]
+>         max_sum = max(max_sum, window_sum)
+>     return max_sum
+> ```
 
-```c
-// C
-int maxSumSubarray(int nums[], int n, int k) {
-    int windowSum = 0;
-    for (int i = 0; i < k; i++) windowSum += nums[i];
-    int maxSum = windowSum;
-    for (int i = k; i < n; i++) {
-        windowSum += nums[i] - nums[i - k];
-        if (windowSum > maxSum) maxSum = windowSum;
-    }
-    return maxSum;
-}
-```
+> [!example]- C
+> ```c
+> // C
+> int maxSumSubarray(int nums[], int n, int k) {
+>     int windowSum = 0;
+>     for (int i = 0; i < k; i++) windowSum += nums[i];
+>     int maxSum = windowSum;
+>     for (int i = k; i < n; i++) {
+>         windowSum += nums[i] - nums[i - k];
+>         if (windowSum > maxSum) maxSum = windowSum;
+>     }
+>     return maxSum;
+> }
+> ```
 
-```cpp
-// C++
-int maxSumSubarray(vector<int>& nums, int k) {
-    int windowSum = 0;
-    for (int i = 0; i < k; i++) windowSum += nums[i];
-    int maxSum = windowSum;
-    for (int i = k; i < nums.size(); i++) {
-        windowSum += nums[i] - nums[i - k];
-        maxSum = max(maxSum, windowSum);
-    }
-    return maxSum;
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> int maxSumSubarray(vector<int>& nums, int k) {
+>     int windowSum = 0;
+>     for (int i = 0; i < k; i++) windowSum += nums[i];
+>     int maxSum = windowSum;
+>     for (int i = k; i < nums.size(); i++) {
+>         windowSum += nums[i] - nums[i - k];
+>         maxSum = max(maxSum, windowSum);
+>     }
+>     return maxSum;
+> }
+> ```
 
 ## Practice & Resources
 

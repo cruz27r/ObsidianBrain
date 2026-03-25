@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [DFS, Recursion, Trie]
 ---
 
+> [!pattern] Recursion · State Space Search
+
 # Backtracking
 
 ## What It Is
@@ -80,15 +82,14 @@ The critical piece: `path.push(choice)` before recursing, `path.pop()` after. Th
 
 ---
 
-## When to Use
-
-- Generate all subsets, permutations, or combinations
-- Constraint satisfaction (N-Queens, Sudoku solver)
-- Word search on a grid
-- Generate all valid parentheses combinations
-- Path finding where you need all paths, not just the shortest
-
-**Dead giveaway**: "all possible", "generate all", "find all combinations/permutations/subsets"
+> [!use] When to Use
+> - Generate all subsets, permutations, or combinations
+> - Constraint satisfaction (N-Queens, Sudoku solver)
+> - Word search on a grid
+> - Generate all valid parentheses combinations
+> - Path finding where you need all paths, not just the shortest
+>
+> **Dead giveaway**: "all possible", "generate all", "find all combinations/permutations/subsets"
 
 ---
 
@@ -288,92 +289,98 @@ function combinationSum2(candidates: number[], target: number): number[][] {
 
 Backtracking is inherently exponential in the worst case, but pruning makes it practical:
 
-| Problem | Time (worst case) | Notes |
-|---|---|---|
-| Subsets | O(n · 2ⁿ) | 2ⁿ subsets, O(n) to copy each |
-| Permutations | O(n · n!) | n! permutations |
-| Combination sum | O(n^(T/min)) | T = target, branching factor × depth |
-| Word search | O(4^L · m·n) | L = word length, 4 directions |
+> [!complexity] Complexity
+> | Problem | Time (worst case) | Notes |
+> |---|---|---|
+> | Subsets | O(n · 2ⁿ) | 2ⁿ subsets, O(n) to copy each |
+> | Permutations | O(n · n!) | n! permutations |
+> | Combination sum | O(n^(T/min)) | T = target, branching factor × depth |
+> | Word search | O(4^L · m·n) | L = word length, 4 directions |
 
 ---
 
 ## Multi-Language Reference — All Subsets
 
-```javascript
-// JavaScript
-function subsets(nums) {
-  const result = [];
-  function backtrack(start, current) {
-    result.push([...current]);
-    for (let i = start; i < nums.length; i++) {
-      current.push(nums[i]);
-      backtrack(i + 1, current);
-      current.pop();
-    }
-  }
-  backtrack(0, []);
-  return result;
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function subsets(nums) {
+>   const result = [];
+>   function backtrack(start, current) {
+>     result.push([...current]);
+>     for (let i = start; i < nums.length; i++) {
+>       current.push(nums[i]);
+>       backtrack(i + 1, current);
+>       current.pop();
+>     }
+>   }
+>   backtrack(0, []);
+>   return result;
+> }
+> ```
 
-```java
-// Java
-public static List<List<Integer>> subsets(int[] nums) {
-    List<List<Integer>> result = new ArrayList<>();
-    backtrack(nums, 0, new ArrayList<>(), result);
-    return result;
-}
-private static void backtrack(int[] nums, int start, List<Integer> current, List<List<Integer>> result) {
-    result.add(new ArrayList<>(current));
-    for (int i = start; i < nums.length; i++) {
-        current.add(nums[i]);
-        backtrack(nums, i + 1, current, result);
-        current.remove(current.size() - 1);
-    }
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static List<List<Integer>> subsets(int[] nums) {
+>     List<List<Integer>> result = new ArrayList<>();
+>     backtrack(nums, 0, new ArrayList<>(), result);
+>     return result;
+> }
+> private static void backtrack(int[] nums, int start, List<Integer> current, List<List<Integer>> result) {
+>     result.add(new ArrayList<>(current));
+>     for (int i = start; i < nums.length; i++) {
+>         current.add(nums[i]);
+>         backtrack(nums, i + 1, current, result);
+>         current.remove(current.size() - 1);
+>     }
+> }
+> ```
 
-```python
-# Python
-def subsets(nums):
-    result = []
-    def backtrack(start, current):
-        result.append(current[:])
-        for i in range(start, len(nums)):
-            current.append(nums[i])
-            backtrack(i + 1, current)
-            current.pop()
-    backtrack(0, [])
-    return result
-```
+> [!example]- Python
+> ```python
+> # Python
+> def subsets(nums):
+>     result = []
+>     def backtrack(start, current):
+>         result.append(current[:])
+>         for i in range(start, len(nums)):
+>             current.append(nums[i])
+>             backtrack(i + 1, current)
+>             current.pop()
+>     backtrack(0, [])
+>     return result
+> ```
 
-```c
-// C (print all subsets — dynamic allocation complex; simplified with fixed size)
-void backtrack(int nums[], int n, int start, int current[], int depth) {
-    // print current subset
-    printf("["); for (int i = 0; i < depth; i++) printf("%d ", current[i]); printf("]\n");
-    for (int i = start; i < n; i++) {
-        current[depth] = nums[i];
-        backtrack(nums, n, i + 1, current, depth + 1);
-    }
-}
-```
+> [!example]- C
+> ```c
+> // C (print all subsets — dynamic allocation complex; simplified with fixed size)
+> void backtrack(int nums[], int n, int start, int current[], int depth) {
+>     // print current subset
+>     printf("["); for (int i = 0; i < depth; i++) printf("%d ", current[i]); printf("]\n");
+>     for (int i = start; i < n; i++) {
+>         current[depth] = nums[i];
+>         backtrack(nums, n, i + 1, current, depth + 1);
+>     }
+> }
+> ```
 
-```cpp
-// C++
-void backtrack(vector<int>& nums, int start, vector<int>& current, vector<vector<int>>& result) {
-    result.push_back(current);
-    for (int i = start; i < nums.size(); i++) {
-        current.push_back(nums[i]);
-        backtrack(nums, i + 1, current, result);
-        current.pop_back();
-    }
-}
-vector<vector<int>> subsets(vector<int>& nums) {
-    vector<vector<int>> result; vector<int> current;
-    backtrack(nums, 0, current, result); return result;
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> void backtrack(vector<int>& nums, int start, vector<int>& current, vector<vector<int>>& result) {
+>     result.push_back(current);
+>     for (int i = start; i < nums.size(); i++) {
+>         current.push_back(nums[i]);
+>         backtrack(nums, i + 1, current, result);
+>         current.pop_back();
+>     }
+> }
+> vector<vector<int>> subsets(vector<int>& nums) {
+>     vector<vector<int>> result; vector<int> current;
+>     backtrack(nums, 0, current, result); return result;
+> }
+> ```
 
 ## Practice & Resources
 

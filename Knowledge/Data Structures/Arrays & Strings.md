@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Hash Tables, Two Pointers, Sliding Window]
 ---
 
+> [!pattern] Linear · Index Access
+
 # Arrays & Strings
 
 ## What it is
@@ -11,16 +13,15 @@ An array is a contiguous block of memory where elements are stored at fixed-size
 
 Strings in JavaScript/TypeScript are **immutable** — every "modification" creates a new string. This makes string manipulation potentially O(n) even for something that looks trivial.
 
-## Complexity
-
-| Operation | Array | Notes |
-|---|---|---|
-| Access by index | O(1) | Direct memory calculation |
-| Search (unsorted) | O(n) | Linear scan |
-| Search (sorted) | O(log n) | [[Binary Search]] |
-| Insert/delete at end | O(1) amortized | Arrays grow by doubling |
-| Insert/delete at middle | O(n) | Must shift elements |
-| String concat in loop | O(n²) | Each `+` copies whole string — use array join |
+> [!complexity] Complexity
+> | Operation | Array | Notes |
+> |---|---|---|
+> | Access by index | O(1) | Direct memory calculation |
+> | Search (unsorted) | O(n) | Linear scan |
+> | Search (sorted) | O(log n) | [[Binary Search]] |
+> | Insert/delete at end | O(1) amortized | Arrays grow by doubling |
+> | Insert/delete at middle | O(n) | Must shift elements |
+> | String concat in loop | O(n²) | Each `+` copies whole string — use array join |
 
 ## Key patterns that use arrays
 
@@ -93,78 +94,83 @@ const result = parts.join('');
 
 ## Multi-Language Reference — Find Max + Kadane's
 
-```javascript
-// JavaScript
-const findMax = arr => arr.reduce((max, n) => n > max ? n : max, arr[0]);
-function maxSubarraySum(nums) {
-  let maxSum = nums[0], curr = nums[0];
-  for (let i = 1; i < nums.length; i++) {
-    curr = Math.max(nums[i], curr + nums[i]);
-    maxSum = Math.max(maxSum, curr);
-  }
-  return maxSum;
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> const findMax = arr => arr.reduce((max, n) => n > max ? n : max, arr[0]);
+> function maxSubarraySum(nums) {
+>   let maxSum = nums[0], curr = nums[0];
+>   for (let i = 1; i < nums.length; i++) {
+>     curr = Math.max(nums[i], curr + nums[i]);
+>     maxSum = Math.max(maxSum, curr);
+>   }
+>   return maxSum;
+> }
+> ```
 
-```java
-// Java
-public static int findMax(int[] arr) {
-    int max = arr[0];
-    for (int n : arr) if (n > max) max = n;
-    return max;
-}
-public static int maxSubarraySum(int[] nums) {
-    int maxSum = nums[0], curr = nums[0];
-    for (int i = 1; i < nums.length; i++) {
-        curr = Math.max(nums[i], curr + nums[i]);
-        maxSum = Math.max(maxSum, curr);
-    }
-    return maxSum;
-}
-// Built-in max: Arrays.stream(arr).max().getAsInt()
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static int findMax(int[] arr) {
+>     int max = arr[0];
+>     for (int n : arr) if (n > max) max = n;
+>     return max;
+> }
+> public static int maxSubarraySum(int[] nums) {
+>     int maxSum = nums[0], curr = nums[0];
+>     for (int i = 1; i < nums.length; i++) {
+>         curr = Math.max(nums[i], curr + nums[i]);
+>         maxSum = Math.max(maxSum, curr);
+>     }
+>     return maxSum;
+> }
+> // Built-in max: Arrays.stream(arr).max().getAsInt()
+> ```
 
-```python
-# Python
-def find_max(arr): return max(arr)  # built-in O(n)
+> [!example]- Python
+> ```python
+> # Python
+> def find_max(arr): return max(arr)  # built-in O(n)
+>
+> def max_subarray_sum(nums):
+>     max_sum = curr = nums[0]
+>     for n in nums[1:]:
+>         curr = max(n, curr + n)
+>         max_sum = max(max_sum, curr)
+>     return max_sum
+> ```
 
-def max_subarray_sum(nums):
-    max_sum = curr = nums[0]
-    for n in nums[1:]:
-        curr = max(n, curr + n)
-        max_sum = max(max_sum, curr)
-    return max_sum
-```
+> [!example]- C
+> ```c
+> // C
+> int findMax(int arr[], int n) {
+>     int max = arr[0];
+>     for (int i = 1; i < n; i++) if (arr[i] > max) max = arr[i];
+>     return max;
+> }
+> int maxSubarraySum(int nums[], int n) {
+>     int maxSum = nums[0], curr = nums[0];
+>     for (int i = 1; i < n; i++) {
+>         curr = nums[i] > curr + nums[i] ? nums[i] : curr + nums[i];
+>         if (curr > maxSum) maxSum = curr;
+>     }
+>     return maxSum;
+> }
+> ```
 
-```c
-// C
-int findMax(int arr[], int n) {
-    int max = arr[0];
-    for (int i = 1; i < n; i++) if (arr[i] > max) max = arr[i];
-    return max;
-}
-int maxSubarraySum(int nums[], int n) {
-    int maxSum = nums[0], curr = nums[0];
-    for (int i = 1; i < n; i++) {
-        curr = nums[i] > curr + nums[i] ? nums[i] : curr + nums[i];
-        if (curr > maxSum) maxSum = curr;
-    }
-    return maxSum;
-}
-```
-
-```cpp
-// C++
-int findMax(vector<int>& arr) { return *max_element(arr.begin(), arr.end()); }
-int maxSubarraySum(vector<int>& nums) {
-    int maxSum = nums[0], curr = nums[0];
-    for (int i = 1; i < nums.size(); i++) {
-        curr = max(nums[i], curr + nums[i]);
-        maxSum = max(maxSum, curr);
-    }
-    return maxSum;
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> int findMax(vector<int>& arr) { return *max_element(arr.begin(), arr.end()); }
+> int maxSubarraySum(vector<int>& nums) {
+>     int maxSum = nums[0], curr = nums[0];
+>     for (int i = 1; i < nums.size(); i++) {
+>         curr = max(nums[i], curr + nums[i]);
+>         maxSum = max(maxSum, curr);
+>     }
+>     return maxSum;
+> }
+> ```
 
 ## Practice & Resources
 

@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Hash Tables, DFS (Depth-First Search), Backtracking]
 ---
 
+> [!pattern] String · Prefix Tree
+
 # Trie (Prefix Tree)
 
 ## What it is
@@ -11,13 +13,13 @@ A tree where each node represents a **single character**. The path from root to 
 
 Think of it as an autocomplete index — every branch shares common prefixes.
 
-## Complexity
-| Operation | Complexity | Notes |
-|---|---|---|
-| Insert | O(m) | m = word length |
-| Search (exact) | O(m) | |
-| startsWith (prefix) | O(m) | |
-| Space | O(n × m) worst case | n = words, m = avg length |
+> [!complexity] Complexity
+> | Operation | Complexity | Notes |
+> |---|---|---|
+> | Insert | O(m) | m = word length |
+> | Search (exact) | O(m) | |
+> | startsWith (prefix) | O(m) | |
+> | Space | O(n × m) worst case | n = words, m = avg length |
 
 ## Diagram — Trie storing "app", "apt", "bat"
 
@@ -139,110 +141,115 @@ searchWithWildcard(word: string): boolean {
 
 ## Multi-Language Reference — Trie Insert + Search
 
-```javascript
-// JavaScript
-class TrieNode { constructor() { this.children = {}; this.isEnd = false; } }
-class Trie {
-  constructor() { this.root = new TrieNode(); }
-  insert(word) {
-    let node = this.root;
-    for (const c of word) { if (!node.children[c]) node.children[c] = new TrieNode(); node = node.children[c]; }
-    node.isEnd = true;
-  }
-  search(word) {
-    let node = this.root;
-    for (const c of word) { if (!node.children[c]) return false; node = node.children[c]; }
-    return node.isEnd;
-  }
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> class TrieNode { constructor() { this.children = {}; this.isEnd = false; } }
+> class Trie {
+>   constructor() { this.root = new TrieNode(); }
+>   insert(word) {
+>     let node = this.root;
+>     for (const c of word) { if (!node.children[c]) node.children[c] = new TrieNode(); node = node.children[c]; }
+>     node.isEnd = true;
+>   }
+>   search(word) {
+>     let node = this.root;
+>     for (const c of word) { if (!node.children[c]) return false; node = node.children[c]; }
+>     return node.isEnd;
+>   }
+> }
+> ```
 
-```java
-// Java
-class Trie {
-    private TrieNode root = new TrieNode();
-    static class TrieNode { TrieNode[] children = new TrieNode[26]; boolean isEnd; }
-    public void insert(String word) {
-        TrieNode node = root;
-        for (char c : word.toCharArray()) {
-            int i = c - 'a';
-            if (node.children[i] == null) node.children[i] = new TrieNode();
-            node = node.children[i];
-        }
-        node.isEnd = true;
-    }
-    public boolean search(String word) {
-        TrieNode node = root;
-        for (char c : word.toCharArray()) {
-            int i = c - 'a';
-            if (node.children[i] == null) return false;
-            node = node.children[i];
-        }
-        return node.isEnd;
-    }
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> class Trie {
+>     private TrieNode root = new TrieNode();
+>     static class TrieNode { TrieNode[] children = new TrieNode[26]; boolean isEnd; }
+>     public void insert(String word) {
+>         TrieNode node = root;
+>         for (char c : word.toCharArray()) {
+>             int i = c - 'a';
+>             if (node.children[i] == null) node.children[i] = new TrieNode();
+>             node = node.children[i];
+>         }
+>         node.isEnd = true;
+>     }
+>     public boolean search(String word) {
+>         TrieNode node = root;
+>         for (char c : word.toCharArray()) {
+>             int i = c - 'a';
+>             if (node.children[i] == null) return false;
+>             node = node.children[i];
+>         }
+>         return node.isEnd;
+>     }
+> }
+> ```
 
-```python
-# Python
-class TrieNode:
-    def __init__(self): self.children = {}; self.is_end = False
+> [!example]- Python
+> ```python
+> # Python
+> class TrieNode:
+>     def __init__(self): self.children = {}; self.is_end = False
+>
+> class Trie:
+>     def __init__(self): self.root = TrieNode()
+>     def insert(self, word):
+>         node = self.root
+>         for c in word:
+>             if c not in node.children: node.children[c] = TrieNode()
+>             node = node.children[c]
+>         node.is_end = True
+>     def search(self, word):
+>         node = self.root
+>         for c in word:
+>             if c not in node.children: return False
+>             node = node.children[c]
+>         return node.is_end
+> ```
 
-class Trie:
-    def __init__(self): self.root = TrieNode()
-    def insert(self, word):
-        node = self.root
-        for c in word:
-            if c not in node.children: node.children[c] = TrieNode()
-            node = node.children[c]
-        node.is_end = True
-    def search(self, word):
-        node = self.root
-        for c in word:
-            if c not in node.children: return False
-            node = node.children[c]
-        return node.is_end
-```
+> [!example]- C
+> ```c
+> // C — fixed-size children array (lowercase letters only)
+> #define ALPHA 26
+> typedef struct TrieNode { struct TrieNode* children[ALPHA]; int isEnd; } TrieNode;
+> TrieNode* newNode() { TrieNode* n = calloc(1, sizeof(TrieNode)); return n; }
+> void insert(TrieNode* root, const char* word) {
+>     TrieNode* node = root;
+>     for (; *word; word++) {
+>         int i = *word - 'a';
+>         if (!node->children[i]) node->children[i] = newNode();
+>         node = node->children[i];
+>     }
+>     node->isEnd = 1;
+> }
+> int search(TrieNode* root, const char* word) {
+>     TrieNode* node = root;
+>     for (; *word; word++) { int i = *word - 'a'; if (!node->children[i]) return 0; node = node->children[i]; }
+>     return node->isEnd;
+> }
+> ```
 
-```c
-// C — fixed-size children array (lowercase letters only)
-#define ALPHA 26
-typedef struct TrieNode { struct TrieNode* children[ALPHA]; int isEnd; } TrieNode;
-TrieNode* newNode() { TrieNode* n = calloc(1, sizeof(TrieNode)); return n; }
-void insert(TrieNode* root, const char* word) {
-    TrieNode* node = root;
-    for (; *word; word++) {
-        int i = *word - 'a';
-        if (!node->children[i]) node->children[i] = newNode();
-        node = node->children[i];
-    }
-    node->isEnd = 1;
-}
-int search(TrieNode* root, const char* word) {
-    TrieNode* node = root;
-    for (; *word; word++) { int i = *word - 'a'; if (!node->children[i]) return 0; node = node->children[i]; }
-    return node->isEnd;
-}
-```
-
-```cpp
-// C++
-struct TrieNode { unordered_map<char, TrieNode*> children; bool isEnd = false; };
-class Trie {
-    TrieNode* root = new TrieNode();
-public:
-    void insert(string word) {
-        TrieNode* node = root;
-        for (char c : word) { if (!node->children.count(c)) node->children[c] = new TrieNode(); node = node->children[c]; }
-        node->isEnd = true;
-    }
-    bool search(string word) {
-        TrieNode* node = root;
-        for (char c : word) { if (!node->children.count(c)) return false; node = node->children[c]; }
-        return node->isEnd;
-    }
-};
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> struct TrieNode { unordered_map<char, TrieNode*> children; bool isEnd = false; };
+> class Trie {
+>     TrieNode* root = new TrieNode();
+> public:
+>     void insert(string word) {
+>         TrieNode* node = root;
+>         for (char c : word) { if (!node->children.count(c)) node->children[c] = new TrieNode(); node = node->children[c]; }
+>         node->isEnd = true;
+>     }
+>     bool search(string word) {
+>         TrieNode* node = root;
+>         for (char c : word) { if (!node->children.count(c)) return false; node = node->children[c]; }
+>         return node->isEnd;
+>     }
+> };
+> ```
 
 ## Practice & Resources
 

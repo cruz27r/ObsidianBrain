@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Binary Tree, Sorting Algorithms, Greedy, Graph]
 ---
 
+> [!pattern] Ordering · Top-K · Priority
+
 # Heap (Priority Queue)
 
 ## What it is
@@ -14,14 +16,14 @@ A **complete binary tree** where every parent satisfies a heap property:
 Stored as a flat **array** (no pointers needed):
 - Node at index `i` → left child at `2i+1`, right child at `2i+2`, parent at `Math.floor((i-1)/2)`
 
-## Complexity
-| Operation | Complexity |
-|---|---|
-| Peek min/max | O(1) |
-| Insert | O(log n) — bubble up |
-| Extract min/max | O(log n) — bubble down |
-| Build heap from array | O(n) — not O(n log n)! |
-| Search | O(n) — heaps don't support fast search |
+> [!complexity] Complexity
+> | Operation | Complexity |
+> |---|---|
+> | Peek min/max | O(1) |
+> | Insert | O(log n) — bubble up |
+> | Extract min/max | O(log n) — bubble down |
+> | Build heap from array | O(n) — not O(n log n)! |
+> | Search | O(n) — heaps don't support fast search |
 
 ## Diagram — Min-Heap (root = smallest)
 
@@ -122,61 +124,66 @@ Build max-heap in O(n), then extract max n times = O(n log n). In-place, no extr
 
 ## Multi-Language Reference — Min-Heap / Priority Queue
 
-```javascript
-// JavaScript — no built-in heap; use sorted array or implement MinHeap class (see above)
-// For interviews, declare: "I'll use a min-heap; JS needs manual implementation"
-// Minimal simulation:
-const minHeap = [];
-minHeap.push(3); minHeap.push(1); minHeap.push(2);
-minHeap.sort((a, b) => a - b); // O(n log n) — not true heap, for illustration only
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript — no built-in heap; use sorted array or implement MinHeap class (see above)
+> // For interviews, declare: "I'll use a min-heap; JS needs manual implementation"
+> // Minimal simulation:
+> const minHeap = [];
+> minHeap.push(3); minHeap.push(1); minHeap.push(2);
+> minHeap.sort((a, b) => a - b); // O(n log n) — not true heap, for illustration only
+> ```
 
-```java
-// Java — PriorityQueue is a min-heap by default
-PriorityQueue<Integer> minHeap = new PriorityQueue<>();
-minHeap.offer(3); minHeap.offer(1); minHeap.offer(2);
-int top = minHeap.peek();   // 1 (min)
-int removed = minHeap.poll(); // 1
-// Max-heap:
-PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
-```
+> [!example]- Java
+> ```java
+> // Java — PriorityQueue is a min-heap by default
+> PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+> minHeap.offer(3); minHeap.offer(1); minHeap.offer(2);
+> int top = minHeap.peek();   // 1 (min)
+> int removed = minHeap.poll(); // 1
+> // Max-heap:
+> PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+> ```
 
-```python
-# Python — heapq is a min-heap
-import heapq
-heap = []
-heapq.heappush(heap, 3)
-heapq.heappush(heap, 1)
-heapq.heappush(heap, 2)
-top = heap[0]            # 1 (peek min)
-removed = heapq.heappop(heap)  # 1
-# Max-heap: negate values
-heapq.heappush(heap, -5)  # store -5 to simulate max
-```
+> [!example]- Python
+> ```python
+> # Python — heapq is a min-heap
+> import heapq
+> heap = []
+> heapq.heappush(heap, 3)
+> heapq.heappush(heap, 1)
+> heapq.heappush(heap, 2)
+> top = heap[0]            # 1 (peek min)
+> removed = heapq.heappop(heap)  # 1
+> # Max-heap: negate values
+> heapq.heappush(heap, -5)  # store -5 to simulate max
+> ```
 
-```c
-// C — no built-in heap; manual array-based implementation required
-// Binary heap stored in array: parent(i)=(i-1)/2, left(i)=2i+1, right(i)=2i+2
-void swap(int* a, int* b) { int t = *a; *a = *b; *b = t; }
-void bubbleUp(int heap[], int i) {
-    while (i > 0 && heap[(i-1)/2] > heap[i]) {
-        swap(&heap[(i-1)/2], &heap[i]);
-        i = (i-1)/2;
-    }
-}
-```
+> [!example]- C
+> ```c
+> // C — no built-in heap; manual array-based implementation required
+> // Binary heap stored in array: parent(i)=(i-1)/2, left(i)=2i+1, right(i)=2i+2
+> void swap(int* a, int* b) { int t = *a; *a = *b; *b = t; }
+> void bubbleUp(int heap[], int i) {
+>     while (i > 0 && heap[(i-1)/2] > heap[i]) {
+>         swap(&heap[(i-1)/2], &heap[i]);
+>         i = (i-1)/2;
+>     }
+> }
+> ```
 
-```cpp
-// C++
-#include <queue>
-priority_queue<int, vector<int>, greater<int>> minHeap; // min-heap
-minHeap.push(3); minHeap.push(1); minHeap.push(2);
-int top = minHeap.top();  // 1
-minHeap.pop();
-// Max-heap (default):
-priority_queue<int> maxHeap;
-maxHeap.push(3); // top() returns largest
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> #include <queue>
+> priority_queue<int, vector<int>, greater<int>> minHeap; // min-heap
+> minHeap.push(3); minHeap.push(1); minHeap.push(2);
+> int top = minHeap.top();  // 1
+> minHeap.pop();
+> // Max-heap (default):
+> priority_queue<int> maxHeap;
+> maxHeap.push(3); // top() returns largest
+> ```
 
 ## Practice & Resources
 

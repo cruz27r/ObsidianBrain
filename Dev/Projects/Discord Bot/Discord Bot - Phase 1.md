@@ -7,6 +7,8 @@ tech: [discord.js, typescript, anthropic-sdk, openai-sdk, replicate]
 linked: []
 ---
 
+> [!status-planning] Status — Planning · Pending Discord App Setup
+
 # Discord Bot - Phase 1: Core + AI Commands
 
 ## Goal

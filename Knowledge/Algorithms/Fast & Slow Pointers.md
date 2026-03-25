@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Linked List, Arrays & Strings, Two Pointers]
 ---
 
+> [!pattern] Linked List · Cycle Detection
+
 # Fast & Slow Pointers
 
 ## What It Is
@@ -32,15 +34,14 @@ fast: 1 → 3 → 5 → 7 → 4 → 6 → 8 ...
 
 ---
 
-## When to Use
-
-- Detect a cycle in a [[Linked List|linked list]] or numeric sequence
-- Find the start of a cycle
-- Find the middle of a linked list (in one pass)
-- Check if a linked list is a palindrome (find middle, reverse second half)
-- Happy number problem (detect if a sequence loops)
-
-**Dead giveaway**: "detect cycle", "find middle", "is there a loop", "Floyd's"
+> [!use] When to Use
+> - Detect a cycle in a [[Linked List|linked list]] or numeric sequence
+> - Find the start of a cycle
+> - Find the middle of a linked list (in one pass)
+> - Check if a linked list is a palindrome (find middle, reverse second half)
+> - Happy number problem (detect if a sequence loops)
+>
+> **Dead giveaway**: "detect cycle", "find middle", "is there a loop", "Floyd's"
 
 ---
 
@@ -179,14 +180,13 @@ function isHappy(n: number): boolean {
 
 ---
 
-## Complexity
-
-| Problem | Time | Space |
-|---|---|---|
-| Detect cycle | O(n) | O(1) |
-| Find cycle start | O(n) | O(1) |
-| Find middle | O(n) | O(1) |
-| Happy number | O(log n) per step × O(cycle length) | O(1) |
+> [!complexity] Complexity
+> | Problem | Time | Space |
+> |---|---|---|
+> | Detect cycle | O(n) | O(1) |
+> | Find cycle start | O(n) | O(1) |
+> | Find middle | O(n) | O(1) |
+> | Happy number | O(log n) per step × O(cycle length) | O(1) |
 
 The O(1) space is the main advantage over using a visited hash set (which would be O(n)).
 
@@ -203,69 +203,74 @@ The O(1) space is the main advantage over using a visited hash set (which would 
 
 ## Multi-Language Reference — Detect Cycle in Linked List
 
-```javascript
-// JavaScript
-function hasCycle(head) {
-  let slow = head, fast = head;
-  while (fast !== null && fast.next !== null) {
-    slow = slow.next;
-    fast = fast.next.next;
-    if (slow === fast) return true;
-  }
-  return false;
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function hasCycle(head) {
+>   let slow = head, fast = head;
+>   while (fast !== null && fast.next !== null) {
+>     slow = slow.next;
+>     fast = fast.next.next;
+>     if (slow === fast) return true;
+>   }
+>   return false;
+> }
+> ```
 
-```java
-// Java
-public static boolean hasCycle(ListNode head) {
-    ListNode slow = head, fast = head;
-    while (fast != null && fast.next != null) {
-        slow = slow.next;
-        fast = fast.next.next;
-        if (slow == fast) return true;
-    }
-    return false;
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static boolean hasCycle(ListNode head) {
+>     ListNode slow = head, fast = head;
+>     while (fast != null && fast.next != null) {
+>         slow = slow.next;
+>         fast = fast.next.next;
+>         if (slow == fast) return true;
+>     }
+>     return false;
+> }
+> ```
 
-```python
-# Python
-def has_cycle(head):
-    slow = fast = head
-    while fast and fast.next:
-        slow = slow.next
-        fast = fast.next.next
-        if slow is fast:
-            return True
-    return False
-```
+> [!example]- Python
+> ```python
+> # Python
+> def has_cycle(head):
+>     slow = fast = head
+>     while fast and fast.next:
+>         slow = slow.next
+>         fast = fast.next.next
+>         if slow is fast:
+>             return True
+>     return False
+> ```
 
-```c
-// C
-int hasCycle(struct ListNode* head) {
-    struct ListNode *slow = head, *fast = head;
-    while (fast != NULL && fast->next != NULL) {
-        slow = slow->next;
-        fast = fast->next->next;
-        if (slow == fast) return 1;
-    }
-    return 0;
-}
-```
+> [!example]- C
+> ```c
+> // C
+> int hasCycle(struct ListNode* head) {
+>     struct ListNode *slow = head, *fast = head;
+>     while (fast != NULL && fast->next != NULL) {
+>         slow = slow->next;
+>         fast = fast->next->next;
+>         if (slow == fast) return 1;
+>     }
+>     return 0;
+> }
+> ```
 
-```cpp
-// C++
-bool hasCycle(ListNode* head) {
-    ListNode *slow = head, *fast = head;
-    while (fast && fast->next) {
-        slow = slow->next;
-        fast = fast->next->next;
-        if (slow == fast) return true;
-    }
-    return false;
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> bool hasCycle(ListNode* head) {
+>     ListNode *slow = head, *fast = head;
+>     while (fast && fast->next) {
+>         slow = slow->next;
+>         fast = fast->next->next;
+>         if (slow == fast) return true;
+>     }
+>     return false;
+> }
+> ```
 
 ## Practice & Resources
 

@@ -4,27 +4,29 @@ created: 2026-03-21
 related: [Big O Notation, Sorting Algorithms]
 ---
 
+> [!pattern] Searching · Divide & Conquer
+
 # Binary Search
 
 ## What it is
 A search algorithm that finds a target in a **sorted** array by repeatedly halving the search range. Much faster than scanning every element.
 
-## Complexity
-| | |
-|---|---|
-| Time | O(log n) |
-| Space | O(1) iterative / O(log n) recursive |
+> [!complexity] Complexity
+> | | |
+> |---|---|
+> | Time | O(log n) |
+> | Space | O(1) iterative / O(log n) recursive |
 
 With 1 million items: linear search = up to 1,000,000 checks. Binary search = at most 20.
 
-## When to use it
-- Array is sorted (required — won't work otherwise)
-- You need fast lookups by value
-- Searching large datasets
+> [!use] When to Use
+> - Array is sorted (required — won't work otherwise)
+> - You need fast lookups by value
+> - Searching large datasets
 
-## When NOT to use it
-- Unsorted data (sort first, or use a [[Hash Tables|hash map]] instead)
-- [[Linked List|Linked lists]] — no O(1) index access, kills the advantage
+> [!avoid] When NOT to Use
+> - Unsorted data (sort first, or use a [[Hash Tables|hash map]] instead)
+> - [[Linked List|Linked lists]] — no O(1) index access, kills the advantage
 
 ## How it works
 1. Start with low = 0, high = last index
@@ -56,100 +58,107 @@ flowchart TD
 *Why this is O(log n): each iteration cuts the remaining search space in half. 1,000,000 → 500,000 → 250,000 → ... → 1. That's only 20 steps.*
 
 ## Code (TypeScript)
-```typescript
-function binarySearch(arr: number[], target: number): number {
-  let low = 0;
-  let high = arr.length - 1;
 
-  while (low <= high) {
-    const mid = Math.floor((low + high) / 2);
-    if (arr[mid] === target) return mid;
-    if (arr[mid] < target) low = mid + 1;
-    else high = mid - 1;
-  }
-
-  return -1; // not found
-}
-
-// Usage
-const sorted = [1, 3, 5, 7, 9, 11, 13];
-binarySearch(sorted, 7);  // → 3 (index)
-binarySearch(sorted, 6);  // → -1
-```
+> [!example]- TypeScript
+> ```typescript
+> function binarySearch(arr: number[], target: number): number {
+>   let low = 0;
+>   let high = arr.length - 1;
+>
+>   while (low <= high) {
+>     const mid = Math.floor((low + high) / 2);
+>     if (arr[mid] === target) return mid;
+>     if (arr[mid] < target) low = mid + 1;
+>     else high = mid - 1;
+>   }
+>
+>   return -1; // not found
+> }
+>
+> // Usage
+> const sorted = [1, 3, 5, 7, 9, 11, 13];
+> binarySearch(sorted, 7);  // → 3 (index)
+> binarySearch(sorted, 6);  // → -1
+> ```
 
 ## Multi-Language Reference
 
-```javascript
-// JavaScript
-function binarySearch(arr, target) {
-  let low = 0, high = arr.length - 1;
-  while (low <= high) {
-    const mid = Math.floor((low + high) / 2);
-    if (arr[mid] === target) return mid;
-    arr[mid] < target ? low = mid + 1 : high = mid - 1;
-  }
-  return -1;
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function binarySearch(arr, target) {
+>   let low = 0, high = arr.length - 1;
+>   while (low <= high) {
+>     const mid = Math.floor((low + high) / 2);
+>     if (arr[mid] === target) return mid;
+>     arr[mid] < target ? low = mid + 1 : high = mid - 1;
+>   }
+>   return -1;
+> }
+> ```
 
-```java
-// Java
-public static int binarySearch(int[] arr, int target) {
-    int low = 0, high = arr.length - 1;
-    while (low <= high) {
-        int mid = low + (high - low) / 2; // avoids overflow vs (low+high)/2
-        if (arr[mid] == target) return mid;
-        else if (arr[mid] < target) low = mid + 1;
-        else high = mid - 1;
-    }
-    return -1;
-}
-// Built-in: Arrays.binarySearch(arr, target)
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static int binarySearch(int[] arr, int target) {
+>     int low = 0, high = arr.length - 1;
+>     while (low <= high) {
+>         int mid = low + (high - low) / 2; // avoids overflow vs (low+high)/2
+>         if (arr[mid] == target) return mid;
+>         else if (arr[mid] < target) low = mid + 1;
+>         else high = mid - 1;
+>     }
+>     return -1;
+> }
+> // Built-in: Arrays.binarySearch(arr, target)
+> ```
 
-```python
-# Python
-def binary_search(arr, target):
-    low, high = 0, len(arr) - 1
-    while low <= high:
-        mid = (low + high) // 2
-        if arr[mid] == target: return mid
-        elif arr[mid] < target: low = mid + 1
-        else: high = mid - 1
-    return -1
+> [!example]- Python
+> ```python
+> # Python
+> def binary_search(arr, target):
+>     low, high = 0, len(arr) - 1
+>     while low <= high:
+>         mid = (low + high) // 2
+>         if arr[mid] == target: return mid
+>         elif arr[mid] < target: low = mid + 1
+>         else: high = mid - 1
+>     return -1
+>
+> # Built-in: import bisect; bisect.bisect_left(arr, target)
+> ```
 
-# Built-in: import bisect; bisect.bisect_left(arr, target)
-```
+> [!example]- C
+> ```c
+> // C
+> int binarySearch(int arr[], int n, int target) {
+>     int low = 0, high = n - 1;
+>     while (low <= high) {
+>         int mid = low + (high - low) / 2;
+>         if (arr[mid] == target) return mid;
+>         else if (arr[mid] < target) low = mid + 1;
+>         else high = mid - 1;
+>     }
+>     return -1;
+> }
+> // Built-in: bsearch() from stdlib.h
+> ```
 
-```c
-// C
-int binarySearch(int arr[], int n, int target) {
-    int low = 0, high = n - 1;
-    while (low <= high) {
-        int mid = low + (high - low) / 2;
-        if (arr[mid] == target) return mid;
-        else if (arr[mid] < target) low = mid + 1;
-        else high = mid - 1;
-    }
-    return -1;
-}
-// Built-in: bsearch() from stdlib.h
-```
-
-```cpp
-// C++
-int binarySearch(vector<int>& arr, int target) {
-    int low = 0, high = arr.size() - 1;
-    while (low <= high) {
-        int mid = low + (high - low) / 2;
-        if (arr[mid] == target) return mid;
-        else if (arr[mid] < target) low = mid + 1;
-        else high = mid - 1;
-    }
-    return -1;
-}
-// Built-in: lower_bound(arr.begin(), arr.end(), target)
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> int binarySearch(vector<int>& arr, int target) {
+>     int low = 0, high = arr.size() - 1;
+>     while (low <= high) {
+>         int mid = low + (high - low) / 2;
+>         if (arr[mid] == target) return mid;
+>         else if (arr[mid] < target) low = mid + 1;
+>         else high = mid - 1;
+>     }
+>     return -1;
+> }
+> // Built-in: lower_bound(arr.begin(), arr.end(), target)
+> ```
 
 ## Practice & Resources
 

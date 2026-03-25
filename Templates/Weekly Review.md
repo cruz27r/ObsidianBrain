@@ -6,26 +6,26 @@ created: <% tp.date.now("YYYY-MM-DD") %>
 
 # Week of <% tp.date.now("MMMM D, YYYY") %>
 
-## What got done
--
+> [!tip] What got done
+> -
 
-## What didn't get done (and why)
--
+> [!warning] What didn't get done (and why)
+> -
 
-## Inbox processed?
-```dataview
-LIST FROM "00-Inbox" SORT file.ctime ASC
-```
+> [!abstract] Inbox — still unprocessed?
+> ```dataview
+> LIST FROM "00-Inbox" SORT file.ctime ASC
+> ```
 
-## Active projects — any blockers?
-```dataview
-TABLE status FROM "Dev/Projects" OR "Business" WHERE status = "active"
-```
+> [!abstract] Active Projects — any blockers?
+> ```dataview
+> TABLE status FROM "Dev/Projects" OR "Business" WHERE status = "active"
+> ```
 
-## Next week priorities
-1.
-2.
-3.
+> [!todo] Next week priorities
+> 1.
+> 2.
+> 3.
 
-## Links
-- [[Home]]
+---
+[[Home]]

@@ -9,11 +9,11 @@ linked: [Discord Bot - Phase 1]
 
 Running log of sessions, decisions, and progress. Most recent at top.
 
-## Open Tasks
-```tasks
-not done
-path includes Discord Bot
-```
+> [!todo] Open Tasks
+> ```tasks
+> not done
+> path includes Discord Bot
+> ```
 
 ---
 

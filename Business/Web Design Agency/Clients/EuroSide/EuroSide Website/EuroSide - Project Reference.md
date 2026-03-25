@@ -7,6 +7,8 @@ tech: [next.js, tailwind-css-v4, typescript, vercel, stripe]
 linked: [EuroSide - Brand Guidelines]
 ---
 
+> [!status-active] Status — Active · Pending Real Photos + Go-Live Credentials
+
 # EuroSide Automotive — Project Reference
 
 ## Goal
@@ -35,21 +37,19 @@ Build a premium, dark-themed website for EuroSide Automotive (Norwood, MA) — a
 
 ## Brand Guidelines
 
-### Colors (from `globals.css @theme` — source of truth)
-| Token | Hex | Use |
-|---|---|---|
-| `--color-bg` | `#141414` | Page background |
-| `--color-surface` | `#1c1c1c` | Cards, inputs |
-| `--color-border` | `#2e2e2e` | Borders, dividers |
-| `--color-orange` | `#E8511A` | CTAs, accents, "Euro" in logo |
-| `--color-blue` | `#4DB6E8` | Nav active/hover, labels, "side" in logo |
-| Body bg (layout.tsx) | `#181510` | Warm charcoal — set on `<body>` |
-| Surface (warm) | `#1e1a12` | Cards/inputs (warm variant) |
-| Text body | `#e2d5c3` | Main readable text |
-| Text secondary | `#d8c8b0` | Supporting text |
-| Text hint | `#c8b89a` | Captions, hints |
-
-**Rule:** Never hardcode hex values in components. Always reference `@theme` tokens. If a new color is needed, add it as a token first.
+> [!color-token] Color Tokens — source of truth: `globals.css @theme`
+> **orange** `#E8511A` — CTAs, accents, "Euro" in logo
+> **blue** `#4DB6E8` — Nav active/hover, labels, "side" in logo
+> **bg** `#141414` — Page background
+> **surface** `#1c1c1c` — Cards, inputs
+> **border** `#2e2e2e` — Borders, dividers
+> **body-bg** `#181510` — Warm charcoal on `<body>`
+> **surface-warm** `#1e1a12` — Cards/inputs (warm variant)
+> **text** `#e2d5c3` — Main readable text
+> **text-secondary** `#d8c8b0` — Supporting text
+> **text-hint** `#c8b89a` — Captions, hints
+>
+> **Rule:** Never hardcode hex values. Always reference `@theme` tokens.
 
 ### Fonts
 - `--font-display` — headings / brand name
@@ -76,7 +76,8 @@ Both defined in `globals.css @theme`.
 
 ## Image Asset Map
 
-| Location | Contents |
+> [!brand-blue] Asset Map
+> | Location | Contents |
 |---|---|
 | `brand_assets/` | logo.png, shop-exterior.jpg, diagnostics-equipment.jpg, hoodies.jpg, airfreshner.jpg |
 | `public/images/hero/` | shop-exterior.jpg |
@@ -187,10 +188,11 @@ interface MerchItem {
 
 ## Pending Before Go-Live
 
-- [ ] Add real Gmail App Password to `.env.local` (currently placeholder)
-- [ ] Replace Stripe placeholder links in `src/data/merch.ts`
-- [ ] Replace Unsplash placeholder images with real EuroSide photos (see list above)
-- [ ] Get real customer Instagram photos for gallery (download manually from @eurosideauto)
+> [!warning] Blockers — not live yet
+> - [ ] Add real Gmail App Password to `.env.local` (currently placeholder)
+> - [ ] Replace Stripe placeholder links in `src/data/merch.ts`
+> - [ ] Replace Unsplash placeholder images with real EuroSide photos (see list above)
+> - [ ] Get real customer Instagram photos for gallery (download manually from @eurosideauto)
 
 ---
 

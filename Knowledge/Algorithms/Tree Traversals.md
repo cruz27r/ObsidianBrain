@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Binary Tree, BST (Binary Search Tree), DFS (Depth-First Search), BFS (Breadth-First Search), Stack]
 ---
 
+> [!pattern] Tree · DFS · BFS
+
 # Tree Traversals
 
 ## The 4 traversals at a glance
@@ -141,57 +143,62 @@ function levelOrder(root: TreeNode | null): number[][] {
 
 ## Multi-Language Reference — Inorder Traversal
 
-```javascript
-// JavaScript
-function inorder(root, result = []) {
-  if (!root) return result;
-  inorder(root.left, result);
-  result.push(root.val);
-  inorder(root.right, result);
-  return result;
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function inorder(root, result = []) {
+>   if (!root) return result;
+>   inorder(root.left, result);
+>   result.push(root.val);
+>   inorder(root.right, result);
+>   return result;
+> }
+> ```
 
-```java
-// Java
-public static void inorder(TreeNode root, List<Integer> result) {
-    if (root == null) return;
-    inorder(root.left, result);
-    result.add(root.val);
-    inorder(root.right, result);
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static void inorder(TreeNode root, List<Integer> result) {
+>     if (root == null) return;
+>     inorder(root.left, result);
+>     result.add(root.val);
+>     inorder(root.right, result);
+> }
+> ```
 
-```python
-# Python
-def inorder(root, result=None):
-    if result is None: result = []
-    if not root: return result
-    inorder(root.left, result)
-    result.append(root.val)
-    inorder(root.right, result)
-    return result
-```
+> [!example]- Python
+> ```python
+> # Python
+> def inorder(root, result=None):
+>     if result is None: result = []
+>     if not root: return result
+>     inorder(root.left, result)
+>     result.append(root.val)
+>     inorder(root.right, result)
+>     return result
+> ```
 
-```c
-// C
-void inorder(struct TreeNode* root) {
-    if (!root) return;
-    inorder(root->left);
-    printf("%d ", root->val);
-    inorder(root->right);
-}
-```
+> [!example]- C
+> ```c
+> // C
+> void inorder(struct TreeNode* root) {
+>     if (!root) return;
+>     inorder(root->left);
+>     printf("%d ", root->val);
+>     inorder(root->right);
+> }
+> ```
 
-```cpp
-// C++
-void inorder(TreeNode* root, vector<int>& result) {
-    if (!root) return;
-    inorder(root->left, result);
-    result.push_back(root->val);
-    inorder(root->right, result);
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> void inorder(TreeNode* root, vector<int>& result) {
+>     if (!root) return;
+>     inorder(root->left, result);
+>     result.push_back(root->val);
+>     inorder(root->right, result);
+> }
+> ```
 
 ## Practice & Resources
 

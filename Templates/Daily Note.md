@@ -5,16 +5,19 @@ date: <% tp.date.now("YYYY-MM-DD") %>
 
 # <% tp.date.now("dddd, MMMM D YYYY") %>
 
-## Focus
-What's the one thing that matters today?
+> [!todo] Focus
+> What is the one thing that matters today?
 
-## Tasks
-- [ ]
-- [ ]
-- [ ]
+> [!tip] Active Work
+> - [ ]
+> - [ ]
+> - [ ]
 
-## Notes
-Quick captures from today — process into vault later.
+> [!warning] Inbox Captures
+> Drop quick captures here — process into vault later.
 
-## Links
-- [[Home]]
+> [!note] End-of-Day Reflection
+> What got done? What's carrying over?
+
+---
+[[Home]] · [[<% tp.date.now("YYYY-MM-DD", -1) %>]] · [[<% tp.date.now("YYYY-MM-DD", 1) %>]]

@@ -1,0 +1,48 @@
+/* ── business-styles.css ── */
+/* Applies to: Business/ — EuroSide brand callouts */
+/* Safe vault-wide: all rules are additive (trigger only on explicit callout use) */
+
+/* ─── Brand orange — key brand sections ─── */
+.callout[data-callout="brand-orange"] {
+  background-color: rgba(232, 81, 26, 0.1) !important;
+  border-left-color: #E8511A !important;
+}
+.callout[data-callout="brand-orange"] .callout-title {
+  color: #E8511A !important;
+  font-size: 0.8em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+}
+
+/* ─── Brand blue — tech/UI decision sections ─── */
+.callout[data-callout="brand-blue"] {
+  background-color: rgba(77, 182, 232, 0.08) !important;
+  border-left-color: #4DB6E8 !important;
+}
+.callout[data-callout="brand-blue"] .callout-title {
+  color: #4DB6E8 !important;
+  font-size: 0.8em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+}
+
+/* ─── Color token block — dark bg, monospace, orange border ─── */
+.callout[data-callout="color-token"] {
+  background-color: rgba(14, 14, 14, 0.7) !important;
+  border-left-color: #E8511A !important;
+  font-family: var(--font-monospace) !important;
+}
+.callout[data-callout="color-token"] .callout-title {
+  color: #E8511A !important;
+  font-size: 0.75em !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.12em !important;
+}
+.callout[data-callout="color-token"] .callout-content {
+  font-size: 0.88em !important;
+  line-height: 1.8 !important;
+}
+.callout[data-callout="color-token"] .callout-content code {
+  color: #4DB6E8 !important;
+  background: transparent !important;
+}

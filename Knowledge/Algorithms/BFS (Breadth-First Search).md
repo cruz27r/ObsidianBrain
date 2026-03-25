@@ -4,14 +4,16 @@ created: 2026-03-21
 related: [DFS (Depth-First Search), Queue & Deque, Graph, Binary Tree]
 ---
 
+> [!pattern] Graph Traversal · Level-Order
+
 # BFS (Breadth-First Search)
 
 ## What it is
 Explore a graph or tree **level by level** — visit all neighbors of a node before going deeper. Uses a **queue** (FIFO).
 
-## Complexity
-- Time: O(V + E) for graphs, O(n) for trees
-- Space: O(V) — queue can hold up to a full level
+> [!complexity] Complexity
+> - Time: O(V + E) for graphs, O(n) for trees
+> - Space: O(V) — queue can hold up to a full level
 
 ## Diagram — Level-by-Level Traversal
 
@@ -162,83 +164,88 @@ function bfsGrid(grid: number[][], startR: number, startC: number): number {
 
 ## Multi-Language Reference — BFS on Graph
 
-```javascript
-// JavaScript
-function bfs(graph, start) {
-  const visited = new Set([start]);
-  const queue = [start];
-  while (queue.length) {
-    const node = queue.shift();
-    for (const neighbor of graph.get(node) ?? []) {
-      if (!visited.has(neighbor)) { visited.add(neighbor); queue.push(neighbor); }
-    }
-  }
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function bfs(graph, start) {
+>   const visited = new Set([start]);
+>   const queue = [start];
+>   while (queue.length) {
+>     const node = queue.shift();
+>     for (const neighbor of graph.get(node) ?? []) {
+>       if (!visited.has(neighbor)) { visited.add(neighbor); queue.push(neighbor); }
+>     }
+>   }
+> }
+> ```
 
-```java
-// Java
-public static void bfs(Map<Integer, List<Integer>> graph, int start) {
-    Set<Integer> visited = new HashSet<>();
-    Queue<Integer> queue = new LinkedList<>();
-    visited.add(start); queue.add(start);
-    while (!queue.isEmpty()) {
-        int node = queue.poll();
-        for (int neighbor : graph.getOrDefault(node, Collections.emptyList())) {
-            if (!visited.contains(neighbor)) { visited.add(neighbor); queue.add(neighbor); }
-        }
-    }
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static void bfs(Map<Integer, List<Integer>> graph, int start) {
+>     Set<Integer> visited = new HashSet<>();
+>     Queue<Integer> queue = new LinkedList<>();
+>     visited.add(start); queue.add(start);
+>     while (!queue.isEmpty()) {
+>         int node = queue.poll();
+>         for (int neighbor : graph.getOrDefault(node, Collections.emptyList())) {
+>             if (!visited.contains(neighbor)) { visited.add(neighbor); queue.add(neighbor); }
+>         }
+>     }
+> }
+> ```
 
-```python
-# Python
-from collections import deque
+> [!example]- Python
+> ```python
+> # Python
+> from collections import deque
+>
+> def bfs(graph, start):
+>     visited = {start}
+>     queue = deque([start])
+>     while queue:
+>         node = queue.popleft()
+>         for neighbor in graph.get(node, []):
+>             if neighbor not in visited:
+>                 visited.add(neighbor)
+>                 queue.append(neighbor)
+> ```
 
-def bfs(graph, start):
-    visited = {start}
-    queue = deque([start])
-    while queue:
-        node = queue.popleft()
-        for neighbor in graph.get(node, []):
-            if neighbor not in visited:
-                visited.add(neighbor)
-                queue.append(neighbor)
-```
+> [!example]- C
+> ```c
+> // C (adjacency list as arrays, simple queue with array)
+> void bfs(int adj[][MAX], int n, int start) {
+>     int visited[MAX] = {0};
+>     int queue[MAX], front = 0, rear = 0;
+>     visited[start] = 1;
+>     queue[rear++] = start;
+>     while (front < rear) {
+>         int node = queue[front++];
+>         for (int i = 0; i < n; i++) {
+>             if (adj[node][i] && !visited[i]) {
+>                 visited[i] = 1;
+>                 queue[rear++] = i;
+>             }
+>         }
+>     }
+> }
+> ```
 
-```c
-// C (adjacency list as arrays, simple queue with array)
-void bfs(int adj[][MAX], int n, int start) {
-    int visited[MAX] = {0};
-    int queue[MAX], front = 0, rear = 0;
-    visited[start] = 1;
-    queue[rear++] = start;
-    while (front < rear) {
-        int node = queue[front++];
-        for (int i = 0; i < n; i++) {
-            if (adj[node][i] && !visited[i]) {
-                visited[i] = 1;
-                queue[rear++] = i;
-            }
-        }
-    }
-}
-```
-
-```cpp
-// C++
-void bfs(unordered_map<int, vector<int>>& graph, int start) {
-    unordered_set<int> visited = {start};
-    queue<int> q;
-    q.push(start);
-    while (!q.empty()) {
-        int node = q.front(); q.pop();
-        for (int neighbor : graph[node]) {
-            if (!visited.count(neighbor)) { visited.insert(neighbor); q.push(neighbor); }
-        }
-    }
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> void bfs(unordered_map<int, vector<int>>& graph, int start) {
+>     unordered_set<int> visited = {start};
+>     queue<int> q;
+>     q.push(start);
+>     while (!q.empty()) {
+>         int node = q.front(); q.pop();
+>         for (int neighbor : graph[node]) {
+>             if (!visited.count(neighbor)) { visited.insert(neighbor); q.push(neighbor); }
+>         }
+>     }
+> }
+> ```
 
 ## Practice & Resources
 

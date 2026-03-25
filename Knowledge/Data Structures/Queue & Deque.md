@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Stack, Linked List, BFS (Breadth-First Search)]
 ---
 
+> [!pattern] FIFO · Sliding Window
+
 # Queue & Deque
 
 ## What it is
@@ -42,13 +44,13 @@ class Queue<T> {
 
 For interviews: using `shift()` is acceptable — just mention the O(n) tradeoff if asked.
 
-## Complexity (proper implementation)
-| Operation | Queue | Deque |
-|---|---|---|
-| Enqueue (back) | O(1) | O(1) |
-| Dequeue (front) | O(1) | O(1) |
-| Add/remove front | — | O(1) |
-| Peek | O(1) | O(1) |
+> [!complexity] Complexity (proper implementation)
+> | Operation | Queue | Deque |
+> |---|---|---|
+> | Enqueue (back) | O(1) | O(1) |
+> | Dequeue (front) | O(1) | O(1) |
+> | Add/remove front | — | O(1) |
+> | Peek | O(1) | O(1) |
 
 ## Diagram — FIFO (First In, First Out)
 
@@ -110,54 +112,59 @@ while (queue.length) {
 
 ## Multi-Language Reference — Queue Operations
 
-```javascript
-// JavaScript (array as queue — use pointer trick for O(1) dequeue)
-class Queue {
-  #data = []; #head = 0;
-  enqueue(val) { this.#data.push(val); }
-  dequeue() { return this.#data[this.#head++]; }
-  peek() { return this.#data[this.#head]; }
-  get size() { return this.#data.length - this.#head; }
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript (array as queue — use pointer trick for O(1) dequeue)
+> class Queue {
+>   #data = []; #head = 0;
+>   enqueue(val) { this.#data.push(val); }
+>   dequeue() { return this.#data[this.#head++]; }
+>   peek() { return this.#data[this.#head]; }
+>   get size() { return this.#data.length - this.#head; }
+> }
+> ```
 
-```java
-// Java — use LinkedList or ArrayDeque (never Queue + LinkedList for performance)
-Queue<Integer> queue = new LinkedList<>();  // or new ArrayDeque<>()
-queue.offer(1);          // enqueue
-int front = queue.poll();  // dequeue
-int peek = queue.peek();   // peek without removing
-```
+> [!example]- Java
+> ```java
+> // Java — use LinkedList or ArrayDeque (never Queue + LinkedList for performance)
+> Queue<Integer> queue = new LinkedList<>();  // or new ArrayDeque<>()
+> queue.offer(1);          // enqueue
+> int front = queue.poll();  // dequeue
+> int peek = queue.peek();   // peek without removing
+> ```
 
-```python
-# Python — use deque from collections (O(1) both ends)
-from collections import deque
-queue = deque()
-queue.append(1)       # enqueue
-front = queue.popleft()  # dequeue O(1)
-# list.pop(0) is O(n) — never use for queues
-```
+> [!example]- Python
+> ```python
+> # Python — use deque from collections (O(1) both ends)
+> from collections import deque
+> queue = deque()
+> queue.append(1)       # enqueue
+> front = queue.popleft()  # dequeue O(1)
+> # list.pop(0) is O(n) — never use for queues
+> ```
 
-```c
-// C — implement with circular array or linked list
-typedef struct { int data[1000]; int front, rear; } Queue;
-void enqueue(Queue* q, int val) { q->data[q->rear++] = val; }
-int dequeue(Queue* q) { return q->data[q->front++]; }
-int isEmpty(Queue* q) { return q->front == q->rear; }
-```
+> [!example]- C
+> ```c
+> // C — implement with circular array or linked list
+> typedef struct { int data[1000]; int front, rear; } Queue;
+> void enqueue(Queue* q, int val) { q->data[q->rear++] = val; }
+> int dequeue(Queue* q) { return q->data[q->front++]; }
+> int isEmpty(Queue* q) { return q->front == q->rear; }
+> ```
 
-```cpp
-// C++
-#include <queue>
-queue<int> q;
-q.push(1);          // enqueue
-int front = q.front(); q.pop();  // dequeue
-// For deque (both ends):
-#include <deque>
-deque<int> dq;
-dq.push_back(1); dq.push_front(2);
-dq.pop_back(); dq.pop_front();
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> #include <queue>
+> queue<int> q;
+> q.push(1);          // enqueue
+> int front = q.front(); q.pop();  // dequeue
+> // For deque (both ends):
+> #include <deque>
+> deque<int> dq;
+> dq.push_back(1); dq.push_front(2);
+> dq.pop_back(); dq.pop_front();
+> ```
 
 ## Practice & Resources
 

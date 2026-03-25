@@ -4,6 +4,8 @@ created: 2026-03-21
 related: [Stack, Queue & Deque, Fast & Slow Pointers]
 ---
 
+> [!pattern] Sequential · Pointer Manipulation
+
 # Linked List
 
 ## What it is
@@ -34,16 +36,15 @@ graph LR
 
 *Navigate only left → right. To delete node 2 you must reach it from node 1.*
 
-## Complexity
-
-| Operation | Complexity | Notes |
-|---|---|---|
-| Access by index | O(n) | Must walk from head |
-| Search | O(n) | Linear scan |
-| Insert at head | O(1) | Just update head pointer |
-| Insert at tail | O(n) or O(1) | O(1) if tail pointer maintained |
-| Delete at head | O(1) | |
-| Delete arbitrary node | O(n) | Must find previous node |
+> [!complexity] Complexity
+> | Operation | Complexity | Notes |
+> |---|---|---|
+> | Access by index | O(n) | Must walk from head |
+> | Search | O(n) | Linear scan |
+> | Insert at head | O(1) | Just update head pointer |
+> | Insert at tail | O(n) or O(1) | O(1) if tail pointer maintained |
+> | Delete at head | O(1) | |
+> | Delete arbitrary node | O(n) | Must find previous node |
 
 ## TypeScript node definition (LeetCode style)
 ```typescript
@@ -120,70 +121,75 @@ Uses Fast & Slow pointers — see [[Fast & Slow Pointers]] for full explanation.
 
 ## Multi-Language Reference — Reverse a Linked List
 
-```javascript
-// JavaScript
-function reverseList(head) {
-  let prev = null, curr = head;
-  while (curr) {
-    const next = curr.next;
-    curr.next = prev;
-    prev = curr;
-    curr = next;
-  }
-  return prev;
-}
-```
+> [!example]- JavaScript
+> ```javascript
+> // JavaScript
+> function reverseList(head) {
+>   let prev = null, curr = head;
+>   while (curr) {
+>     const next = curr.next;
+>     curr.next = prev;
+>     prev = curr;
+>     curr = next;
+>   }
+>   return prev;
+> }
+> ```
 
-```java
-// Java
-public static ListNode reverseList(ListNode head) {
-    ListNode prev = null, curr = head;
-    while (curr != null) {
-        ListNode next = curr.next;
-        curr.next = prev;
-        prev = curr;
-        curr = next;
-    }
-    return prev;
-}
-```
+> [!example]- Java
+> ```java
+> // Java
+> public static ListNode reverseList(ListNode head) {
+>     ListNode prev = null, curr = head;
+>     while (curr != null) {
+>         ListNode next = curr.next;
+>         curr.next = prev;
+>         prev = curr;
+>         curr = next;
+>     }
+>     return prev;
+> }
+> ```
 
-```python
-# Python
-def reverse_list(head):
-    prev, curr = None, head
-    while curr:
-        curr.next, prev, curr = prev, curr, curr.next
-    return prev
-```
+> [!example]- Python
+> ```python
+> # Python
+> def reverse_list(head):
+>     prev, curr = None, head
+>     while curr:
+>         curr.next, prev, curr = prev, curr, curr.next
+>     return prev
+> ```
 
-```c
-// C
-struct ListNode* reverseList(struct ListNode* head) {
-    struct ListNode *prev = NULL, *curr = head;
-    while (curr) {
-        struct ListNode* next = curr->next;
-        curr->next = prev;
-        prev = curr;
-        curr = next;
-    }
-    return prev;
-}
-```
+> [!example]- C
+> ```c
+> // C
+> struct ListNode* reverseList(struct ListNode* head) {
+>     struct ListNode *prev = NULL, *curr = head;
+>     while (curr) {
+>         struct ListNode* next = curr->next;
+>         curr->next = prev;
+>         prev = curr;
+>         curr = next;
+>     }
+>     return prev;
+> }
+> ```
 
-```cpp
-// C++
-ListNode* reverseList(ListNode* head) {
-    ListNode *prev = nullptr, *curr = head;
-    while (curr) {
-        ListNode* next = curr->next;
-        curr->next = prev;
-        prev = curr;
-        curr = next;
-    }
-    return prev;
-}
-```
+> [!example]- C++
+> ```cpp
+> // C++
+> ListNode* reverseList(ListNode* head) {
+>     ListNode *prev = nullptr, *curr = head;
+>     while (curr) {
+>         ListNode* next = curr->next;
+>         curr->next = prev;
+>         prev = curr;
+>         curr = next;
+>     }
+>     return prev;
+> }
+> ```
 
 ## Practice & Resources
 
