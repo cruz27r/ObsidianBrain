@@ -238,7 +238,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 262.5
+    "width": 262.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -264,11 +265,16 @@
       "smart-connections:Smart Connections: Open random connection": false,
       "obsidian-day-planner:Open Timeline": false,
       "obsidian-day-planner:Open Multi-Day View": false,
-      "obsidian-leaflet-plugin:Open Leaflet Map": false
+      "obsidian-leaflet-plugin:Open Leaflet Map": false,
+      "periodic-notes:Open today": false
     }
   },
   "active": "e7a7b303c61786dc",
   "lastOpenFiles": [
+    "00-Inbox/Sources",
+    "00-Inbox/Ideas",
+    "00-Inbox/Weekly",
+    "00-Inbox/Daily",
     "Claude Setup/Skills/career-note-design.md",
     "Claude Setup/Skills/business-note-design.md",
     "Claude Setup/Skills/dev-note-design.md",
@@ -280,9 +286,6 @@
     "Knowledge/Data Structures/Heap (Priority Queue).md.tmp.39312.1774406106245",
     "Knowledge/Data Structures/BST (Binary Search Tree).md.tmp.39312.1774406100779",
     "Knowledge/Data Structures/Arrays & Strings.md.tmp.39312.1774406096031",
-    "Knowledge/Algorithms/Two Pointers.md.tmp.39312.1774406092844",
-    "Knowledge/Algorithms/Two Pointers.md.tmp.39312.1774406089633",
-    "Knowledge/Algorithms/Sliding Window.md.tmp.39312.1774406081604",
     "Home.md",
     "Templates/Source Intake.md",
     "Templates/Weekly Review.md",
@@ -303,7 +306,6 @@
     "copilot/copilot-custom-prompts/Generate glossary.md",
     "copilot/copilot-custom-prompts/Generate table of contents.md",
     "copilot/copilot-custom-prompts/Make longer.md",
-    "copilot/copilot-custom-prompts/Make shorter.md",
-    "copilot/copilot-custom-prompts/Emojify.md"
+    "copilot/copilot-custom-prompts/Make shorter.md"
   ]
 }
