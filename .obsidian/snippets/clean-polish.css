@@ -1,57 +1,114 @@
 /* ── Clean Polish Snippet ── */
-/* Subtle upgrades on top of Minimal theme */
 
-/* Heading accent lines — visual hierarchy */
-.markdown-rendered h1,
-.markdown-preview-view h1 {
-  border-bottom: 2px solid var(--color-accent);
-  padding-bottom: 4px;
-  margin-bottom: 12px;
+/* ── Callout blocks — the main visual upgrade ── */
+.callout {
+  border-radius: 10px !important;
+  padding: 14px 18px !important;
+  margin-bottom: 16px !important;
+  border-left-width: 4px !important;
 }
 
-.markdown-rendered h2,
+.callout-title {
+  font-size: 0.8em !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  margin-bottom: 10px !important;
+}
+
+.callout-content {
+  padding-top: 4px !important;
+}
+
+/* Tip = green — Active Projects */
+.callout[data-callout="tip"] {
+  background-color: rgba(49, 116, 90, 0.12) !important;
+  border-left-color: #31745a !important;
+}
+.callout[data-callout="tip"] .callout-title {
+  color: #4ecca3 !important;
+}
+
+/* Todo = blue — Tasks */
+.callout[data-callout="todo"] {
+  background-color: rgba(62, 99, 170, 0.12) !important;
+  border-left-color: #3e63aa !important;
+}
+.callout[data-callout="todo"] .callout-title {
+  color: #7eb8f7 !important;
+}
+
+/* Warning = orange — Inbox */
+.callout[data-callout="warning"] {
+  background-color: rgba(180, 100, 30, 0.12) !important;
+  border-left-color: #b4641e !important;
+}
+.callout[data-callout="warning"] .callout-title {
+  color: #f0a060 !important;
+}
+
+/* Note = purple — Recent Notes */
+.callout[data-callout="note"] {
+  background-color: rgba(120, 80, 180, 0.12) !important;
+  border-left-color: #7850b4 !important;
+}
+.callout[data-callout="note"] .callout-title {
+  color: #b388ff !important;
+}
+
+/* Abstract = teal — Knowledge */
+.callout[data-callout="abstract"] {
+  background-color: rgba(30, 140, 160, 0.12) !important;
+  border-left-color: #1e8ca0 !important;
+}
+.callout[data-callout="abstract"] .callout-title {
+  color: #56d4e8 !important;
+}
+
+/* ── Heading accent lines ── */
+.markdown-preview-view h1 {
+  border-bottom: 2px solid var(--color-accent);
+  padding-bottom: 6px;
+  margin-bottom: 16px;
+  font-size: 1.8em;
+}
 .markdown-preview-view h2 {
   border-bottom: 1px solid var(--background-modifier-border);
   padding-bottom: 3px;
+  margin-top: 24px;
 }
 
-/* Slightly rounded note background + padding */
+/* ── Note padding — more breathing room ── */
 .markdown-preview-view {
-  padding: 24px 32px !important;
+  padding: 28px 36px !important;
 }
 
-/* Tags look like pills */
+/* ── Tags as pills ── */
 .tag {
-  background-color: var(--color-accent-2) !important;
   border-radius: 12px !important;
   padding: 2px 10px !important;
   font-size: 0.78em !important;
   border: none !important;
 }
 
-/* Frontmatter block — subtle, not distracting */
+/* ── Frontmatter — subtle until hovered ── */
 .metadata-container {
-  opacity: 0.6;
-  font-size: 0.85em;
+  opacity: 0.5;
+  font-size: 0.82em;
+  transition: opacity 0.2s ease;
 }
 .metadata-container:hover {
   opacity: 1;
-  transition: opacity 0.2s ease;
 }
 
-/* Dataview tables — cleaner */
-.dataview.table-view-table {
-  border-collapse: collapse;
-  width: 100%;
-}
+/* ── Dataview tables — cleaner ── */
 .dataview.table-view-table th {
   background-color: var(--background-secondary);
   padding: 6px 12px;
-  text-align: left;
-  font-weight: 600;
-  font-size: 0.85em;
+  font-weight: 700;
+  font-size: 0.8em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   color: var(--text-muted);
 }
 .dataview.table-view-table td {
@@ -62,23 +119,11 @@
   border-bottom: none;
 }
 
-/* Checkboxes — slightly larger, more satisfying to click */
-input[type="checkbox"] {
-  width: 16px !important;
-  height: 16px !important;
-}
-
-/* Wikilinks — subtle color, no underline clutter */
+/* ── Wikilinks — clean, no underline clutter ── */
 .internal-link {
   text-decoration: none !important;
   border-bottom: 1px dotted var(--color-accent);
 }
 .internal-link:hover {
   border-bottom: 1px solid var(--color-accent);
-}
-
-/* Callout blocks — rounded and padded */
-.callout {
-  border-radius: 8px !important;
-  padding: 12px 16px !important;
 }
