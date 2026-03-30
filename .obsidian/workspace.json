@@ -271,6 +271,11 @@
   },
   "active": "d57a608733afeffa",
   "lastOpenFiles": [
+    "Dev/Projects/manga-tracker/Initial Data.md",
+    "Dev/Projects/manga-tracker/Initial Data.md.tmp.7924.1774412475623",
+    "Dev/Projects/manga-tracker/Architecture.md",
+    "Dev/Projects/manga-tracker/Architecture.md.tmp.7924.1774412410142",
+    "Dev/Projects/manga-tracker",
     "00-Inbox/2026-03-24 Session Summary - Vault Design.md",
     "00-Inbox/2026-03-24 Session Summary - Vault Design.md.tmp.39312.1774410904745",
     "Career/Interview Prep Tracker.md",
@@ -290,9 +295,6 @@
     "Claude Setup/Skills/knowledge-note-design.md",
     "Knowledge/Data Structures/Trie.md.tmp.39312.1774406119507",
     "Knowledge/Data Structures/Stack.md.tmp.39312.1774406117017",
-    "Knowledge/Data Structures/Queue & Deque.md.tmp.39312.1774406114784",
-    "Knowledge/Data Structures/Linked List.md.tmp.39312.1774406111879",
-    "Knowledge/Data Structures/Heap (Priority Queue).md.tmp.39312.1774406106245",
     "Templates/Source Intake.md",
     "Templates/Weekly Review.md",
     "Templates/Daily Note.md",
@@ -304,8 +306,6 @@
     "copilot/copilot-custom-prompts/Clip Web Page.md",
     "copilot/copilot-custom-prompts/Clip YouTube Transcript.md",
     "copilot/copilot-custom-prompts/Rewrite as tweet thread.md",
-    "copilot/copilot-custom-prompts/Rewrite as tweet.md",
-    "copilot/copilot-custom-prompts/Remove URLs.md",
-    "copilot/copilot-custom-prompts/Generate glossary.md"
+    "copilot/copilot-custom-prompts/Rewrite as tweet.md"
   ]
 }

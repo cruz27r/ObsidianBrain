@@ -10,7 +10,11 @@
       "Bash(cp \"C:/Users/cruzr/.claude/skills/dev-note-design.md\" \"E:/ObsidianBrain/Claude Setup/Skills/\")",
       "Bash(cp \"C:/Users/cruzr/.claude/skills/business-note-design.md\" \"E:/ObsidianBrain/Claude Setup/Skills/\")",
       "Bash(cp \"C:/Users/cruzr/.claude/skills/career-note-design.md\" \"E:/ObsidianBrain/Claude Setup/Skills/\")",
-      "Bash(cp \"C:/Users/cruzr/.claude/instructions/skill-routing.md\" \"E:/ObsidianBrain/Claude Setup/Settings/\")"
+      "Bash(cp \"C:/Users/cruzr/.claude/instructions/skill-routing.md\" \"E:/ObsidianBrain/Claude Setup/Settings/\")",
+      "Read(//e//**)",
+      "Bash(npm --version)",
+      "Bash(npx --version)",
+      "Bash(code:*)"
     ]
   }
 }
