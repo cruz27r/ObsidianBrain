@@ -176,24 +176,44 @@ Research-backed context:
 
 **Silhouette direction:** Oversized / drop shoulder primary. Business casual pieces as separate tier.
 
-**Production method:** ⬜ *To be defined*
-> Options in consideration: Printify (POD to start), screenprint-on-blanks, eventual cut-and-sew overseas
+**Production stage:** Pre-launch. Designs banked, no physical product yet. Starting from zero on manufacturing.
+
+**Production method (launch phase):** Print-on-demand (Printify) or local screenprint-on-blanks to start — lowest risk, no inventory, proves demand. Cut-and-sew overseas is the roadmap once volume and margin justify it.
 
 ---
 
 ## 7. Price Positioning
 
-⬜ *To be defined — next brand bible session*
+**Philosophy:** Priced accurately — not luxury cosplay, not race to the bottom. The price should feel like it respects both the product and the person buying it.
 
-> Direction question: who can actually afford to buy the mission? Accessible is respectful to the 18-30 audience. But cheap devalues what it stands for.
+**Price architecture:**
+
+| Product | Price | Rationale |
+|---|---|---|
+| T-shirt (entry) | $35–45 | Accessible entry. Brings in the audience, builds community. |
+| Crewneck sweatshirt | $55–65 | Mid-tier. Fills the gap between tee and hoodie. |
+| Hoodie (core) | $65–75 | Anchor product. $70 is the sweet spot — felt, not cheap. |
+| Premium / cut-and-sew | $90–130 | Future tier. Reserved for custom-construction pieces when production scales. |
+| Accessories (caps, etc.) | $25–40 | Low barrier. Entry point for people not ready for full piece. |
+
+**Positioning:** This sits in the Awake NY / Essentials tier — honest quality, honest price. Not Supreme ($80+ tees), not fashion-brand markup, not fast fashion cheapness. The audience making $25–55K can reach a $70 hoodie if they believe in what it says. That belief is what the brand earns.
+
+**Cheaper options strategy:** Keep at least one entry product under $40 every drop. Not a markdown — a designed entry point. The tee is the door. The hoodie is the commitment.
 
 ---
 
 ## 8. Drop / Release Strategy
 
-⬜ *To be defined*
+**Approach:** Intentional, not constant. Each drop has a reason — tied to the 6-step cycle, the brand's story, or a moment that earns a release.
 
-> Known intent: drops should feel intentional, not constant. Each drop should have a reason — tied to the 6-step cycle or a moment in the brand's story.
+**Launch plan:**
+1. **Drop 0 / Proof of concept** — 1–2 hero pieces (likely a tee + hoodie). Establish the visual language. Sell to inner circle first. Learn the logistics.
+2. **Drop 1 / Public launch** — Small, tight collection. 3–5 SKUs max. One hero graphic (the statement), one clean logo piece. Let the story lead.
+3. **Ongoing** — 2–4 drops per year. Each with its own identity within the brand system. No filler.
+
+**Restock policy:** TBD — but direction is limited runs with potential restock on staple/evergreen pieces only. Hero graphics stay limited.
+
+**Channels:** Website primary. Instagram for story/announcement. Word of mouth as the validator.
 
 ---
 
@@ -235,20 +255,29 @@ Research-backed context:
 ## 12. Plans & Backlog
 
 ### Active
-- [ ] Complete brand bible (color palette, typography, price positioning, drop strategy)
-- [ ] Define graphic direction for first drop
-- [ ] Identify production method for launch
+- [ ] Define typography direction (extend the 326 custom font logic into full type system)
+- [ ] Define graphic language for Drop 0 / Drop 1
+- [ ] Build mood board / reference curation (brands, vintage, editorial)
+- [ ] Choose production method for launch (Printify POD vs. local screenprint)
+- [ ] Design Drop 0 hero piece(s) — tee + hoodie
 
 ### Next Steps
-- [ ] Question 2 of brand bible: color palette preferences and aesthetic references
-- [ ] Build mood board / reference curation
-- [ ] Define price tier
+- [ ] Lock Pantone refs for core palette (black, bone, earth accent)
+- [ ] Research screenprint vendors or Printify blank selection
+- [ ] Set up brand social presence (Instagram, website)
+- [ ] Draft Drop 1 launch story / announcement concept
+
+### Completed
+- [x] Brand bible core established — identity, origin, audience, market positioning, price, drop strategy
 
 ### Decisions Log
 **2026-06-07 Decision:** Brand name is Not By Design, logo mark is 326 (letters in name: N-O-T=3, B-Y=2, D-E-S-I-G-N=6). — Locked, core to brand identity.
 **2026-06-07 Decision:** Core mission framing: delusional belief × perseverance × not accepting defeat. 6-step cycle: Face → Unlearn → Fail → Adapt → Rebuild → Repeat. — Foundation for all creative direction.
 **2026-06-07 Decision:** Target 18-30 audience, hip hop/sports/Y2K-90s cultural touchpoints, baggy + business casual duality. Not punk. — Defined aesthetic and audience today.
 **2026-06-07 Decision:** Origin story documented. Brand evolved from "Unknown Views" (high school) → Not By Design (post-setback rebuild). The personal journey IS the brand's philosophy — not a marketing angle, the actual source. This informs voice, authenticity, and why the message lands. Never separate the story from the brand.
+**2026-06-07 Decision:** Production stage = pre-launch. Designs banked, no physical items. Starting with POD or local screenprint — lowest risk, proves demand before investing in inventory.
+**2026-06-07 Decision:** Price architecture locked — tees $35–45, crewnecks $55–65, hoodies $65–75. $70 hoodie is the anchor. Always keep one entry product under $40 per drop. Not luxury, not cheap — priced accurately.
+**2026-06-07 Decision:** Color system defined as: black base + bone contrast + one earth neutral + one rotating statement color per drop. Specific Pantones TBD when first drop is designed.
 
 ---
 
