@@ -67,14 +67,51 @@ The feeling when someone puts it on: *I'm not lost. I'm still in it.*
 
 ---
 
-## 3. Target Customer
+## 3. Target Customer & Market Positioning
+
+### The Person
 
 **Age:** 18–30
-**Where they are in life:** Going into the world, possibly feeling lost, dealing with setbacks, trying to hang in or level up
-**Interests:** Hip hop, sports, vintage Y2K/90s culture, streetwear
-**Style personality:** Baggy/oversized as a baseline, but can also switch into business casual — they want to show their professional side without suits. The clothes should let them code-switch without losing who they are.
+**Income range:** $25K–$55K (entry-level jobs, side hustles, early career — not broke, not comfortable yet)
+**Where they are in life:** In the middle of something — a transition, a setback, a rebuild, or an early chapter they're trying to write. Not arrived. Still going.
+
+**Their specific tension:**
+They have cultural roots in hip hop, sports, and street culture that are genuinely who they are — not a phase, not a costume. But they're also entering spaces (jobs, meetings, interviews, creative pitches) that have a certain dress code expectation. They don't want to abandon their identity to be taken seriously. They don't want to dress like someone else to get in the room. They want both — and they want clothes that can do both.
+
+**Interests:** Hip hop, sports (playing and watching), vintage Y2K/90s culture, independent brands, visual content (YouTube, Instagram, TikTok), entrepreneurship/self-development
+**What they hate:** Fake inspiration. Generic motivational messaging. Brands that preach a feeling they didn't earn. Hype for hype's sake.
+**What they respect:** Authenticity. Story. Consistency. Brands that actually mean what they say.
 **Mindset:** Outsider. Not accepted by the "right" rooms yet. Knows it. Still going anyway.
-**Discovery:** Instagram, word of mouth, music/culture adjacent
+**Discovery:** Instagram, word of mouth from people with real taste, YouTube creators they trust, music and culture adjacent
+
+### The Market Gap NBD Fills
+
+Research-backed context:
+- 70% of streetwear buyers earn $40K or less — the audience is not affluent, they're **investing** in identity
+- Lower-income buyers spend 5× more on streetwear than conventional fashion — these purchases are intentional, not casual
+- 80% of streetwear consumers cite hip hop culture as a major influence
+- Musicians/cultural insiders are trusted; algorithm-driven influencers are not
+
+**Existing options and why they miss:**
+
+| Brand | What they get right | Why they miss for NBD's audience |
+|---|---|---|
+| Fear of God / Essentials | Aesthetic, proportion, versatility | $60-100 tees put it out of reach for a 22-year-old making $35K |
+| Corteiz / CRTZ | Outsider energy, community-first | UK-coded; inaccessible geographically and culturally for most US audience |
+| PLEASURES | 90s cultural reference in graphics | Alternative/rock subculture — not hip hop-rooted |
+| Supreme | Iconic | Shifted to commodity hype; belonging died when the line started |
+| Generic "hustle culture" brands | Try to own the mindset space | No authentic story; performance of a feeling they didn't earn |
+
+**The gap:** A brand rooted in the actual experience of failing and rebuilding — not the fantasy of it — that makes clothes for someone who needs to code-switch between cultural identity and professional context, at a price that respects they're still building.
+
+### Positioning Statement
+
+> Not By Design is for the person who is in the middle of their rebuild — culturally grounded in hip hop and street culture, old enough to need to move through professional spaces, too authentic to dress like someone they're not, and too determined to let the setbacks be the end of the story.
+
+### Who It's NOT For
+- People who buy hype to signal status
+- Anyone who needs a logo to feel validated
+- The person who's already arrived — this brand is for the ones still building
 
 ---
 
@@ -107,8 +144,12 @@ The feeling when someone puts it on: *I'm not lost. I'm still in it.*
 - Secondary: "Not By Design" wordmark (when full name needed)
 - The 6-step cycle can be a graphic system on its own: `FACE · UNLEARN · FAIL · ADAPT · REBUILD · REPEAT`
 
-**Color palette:** ⬜ *To be defined — next brand bible session*
-> Direction: likely anchored in neutrals (black, off-white, earth tones) with one statement color per season/drop.
+**Color palette:** *Direction defined — specific Pantone refs TBD per drop*
+> **Core/anchor:** Black-dominant base. Heavy black is authority without being corporate. It's the weight of the story.
+> **Light:** Bone or off-white (not bright white — warmth matters). The contrast between black and bone is the tension between the dark and the rebuild.
+> **Earth accent (permanent neutral):** Stone, tobacco, or washed olive — one warm grounding tone that lives across drops.
+> **Statement color (rotates per drop):** One unexpected color per collection that gives each drop its own identity. Not tied to trend — tied to the story of that specific drop.
+> This palette says: I've been through it. I'm still here. Not celebrating yet. Still moving.
 
 **Typography direction:** ⬜ *To be defined*
 > Starting point: the custom 326 font establishes that type is not generic here. Extend that intentionality.
