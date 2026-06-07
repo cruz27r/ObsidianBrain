@@ -2,6 +2,8 @@
 *Last updated: 2026-06-07*
 *Linked to: [[Not By Design - Brand Bible]]*
 
+> **Interactive version:** Open `~/Desktop/NBD-Muse-Board.html` in any browser for the full visual board — all 25 muses with clickable links, filterable by category, drop concepts, and 3% transformations.
+
 ---
 
 ## The Virgil Method — How to Use This Document
