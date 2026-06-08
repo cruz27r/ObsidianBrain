@@ -139,10 +139,18 @@ Research-backed context:
 
 ## 5. Visual Identity
 
-**Logo system:**
-- Primary: `326` in custom font
-- Secondary: "Not By Design" wordmark (when full name needed)
-- The 6-step cycle can be a graphic system on its own: `FACE · UNLEARN · FAIL · ADAPT · REBUILD · REPEAT`
+**Mark system — 4 marks, each with a distinct use case:**
+
+| Mark | Form | Energy | Use |
+|---|---|---|---|
+| `Not By Design` | Full wordmark | Official / formal | Brand name, labels, official contexts |
+| `326` | Numerical logo (custom font) | Coded / primary | Chest hits, caps, embroidery — the primary logo |
+| `NBD` | 3-letter abbreviation | Casual / swagger | Sleeves, secondary hits, collab pieces, accessories. Double meaning: "No Big Deal" + "Not By Design" |
+| `NTBYDSGN` | Vowel-dropped compression | Typographic / graphic | Large chest prints, back yoke, tonal prints, woven label — the full name in code |
+
+**The system logic:** Each mark reveals the brand at a different depth. A stranger sees 326 and it's just a number. Someone who looks up what it means finds the brand. Someone who wears NTBYDSGN across their chest is carrying the whole name in a form most won't parse. NBD is what you say when you've been through it and came out the other side.
+
+- The 6-step cycle is a separate graphic system: `FACE · UNLEARN · FAIL · ADAPT · REBUILD · REPEAT`
 
 **Color palette:** *Direction defined — specific Pantone refs TBD per drop*
 > **Core/anchor:** Black-dominant base. Heavy black is authority without being corporate. It's the weight of the story.
@@ -278,6 +286,7 @@ Research-backed context:
 **2026-06-07 Decision:** Production stage = pre-launch. Designs banked, no physical items. Starting with POD or local screenprint — lowest risk, proves demand before investing in inventory.
 **2026-06-07 Decision:** Price architecture locked — tees $35–45, crewnecks $55–65, hoodies $65–75. $70 hoodie is the anchor. Always keep one entry product under $40 per drop. Not luxury, not cheap — priced accurately.
 **2026-06-07 Decision:** Color system defined as: black base + bone contrast + one earth neutral + one rotating statement color per drop. Specific Pantones TBD when first drop is designed.
+**2026-06-08 Decision:** 4-mark system locked — Not By Design (full name) / 326 (primary logo) / NBD (casual abbreviation, dual meaning "No Big Deal") / NTBYDSGN (vowel-dropped typographic compression of full name). Each mark reveals the brand at a different depth. NB/DSGN rejected as a mark.
 
 ---
 
